@@ -166,7 +166,24 @@
           </a>
         </div>
       </div>
-    </div>
+      </div>
+
+      <div class="bg-slate-800 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
+      <img src="./assets/logo_2.jpg" alt="Project 3" class="w-full h-56 object-cover rounded-t-lg" />
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold text-gray mb-2">Project 1</h3>
+        <p class="text-sm text-gray-300 mb-4">An e-commerce platform for buying and selling products online.</p>
+        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Stripe API</p>
+        <div class="flex justify-between mt-6">
+          <a href="https://github.com/yourusername/project3" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://yourdemo.com/project3" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
+            <i class="fas fa-external-link-alt mr-2"></i> Demo
+          </a>
+        </div>
+      </div>
+      </div>
     </div>
   </section>
 
