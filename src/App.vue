@@ -202,7 +202,7 @@
         <div class="mb-6">
           <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
           <input
-            v-model="name"
+            v-model="form.name"
             type="text"
             id="name"
             class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
@@ -214,7 +214,7 @@
         <div class="mb-6">
           <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
           <input
-            v-model="email"
+            v-model="form.email"
             type="email"
             id="email"
             class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
@@ -226,7 +226,7 @@
         <div class="mb-6">
           <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
           <textarea
-            v-model="message"
+            v-model="form.message"
             id="message"
             rows="6"
             class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
@@ -326,7 +326,7 @@ export default {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams({
             'form-name': "contact",
-            'name': this.form.message,
+            'name': this.form.name,
             'email': this.form.email,
             'message': this.form.message,
           })
