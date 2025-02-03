@@ -195,7 +195,9 @@
 
     <!-- Contact Form -->
     <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-      <form action="https://formspree.io/mabmeas12@gmail.com" method="POST">
+      <form @submit.prevent="handleSubmit" name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <input type="hidden" name="redirect" value="https://measmeasportfolio.netlify.app/thank-you" />  
         <!-- Name Field -->
         <div class="mb-6">
           <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
@@ -244,10 +246,10 @@
       </form>
 
       <!-- Success/Error Messages -->
-      <div v-if="successMessage" class="mt-6 text-center text-green-500">
-        <p>Your message has been sent successfully!</p>
+      <div v-if="statue === 'success'" class="mt-6 text-center text-green-500">
+        <p>Your message has been sent successfully. Tank You!</p>
       </div>
-      <div v-if="errorMessage" class="mt-6 text-center text-red-500">
+      <div v-if="status === 'error'" class="mt-6 text-center text-red-500">
         <p>There was an error sending your message. Please try again later.</p>
       </div>
     </div>
@@ -305,8 +307,46 @@ export default {
     return {
       isMobile: window.innerWidth < 768,
       activeSection: "home",  
+      
+      //Contact form
+      form: {
+        name: "",
+        email: "",
+        message: ""
+      },
+      status: ""
     };
   },
+  //Submit Form
+  methods: {
+    async handleSubmit(){
+      try{
+        const response = await fetch('/', {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            'form-name': "contact",
+            'name': this.form.message,
+            'email': this.form.email,
+            'message': this.form.message,
+          })
+        }) ;
+        if (response.ok){
+          this.status = "success";
+          this.form = {
+            name: "",
+            email: "",
+            message: ""
+          };
+        }else{
+          this.status = "error";
+        }
+      }catch (error){
+        this.status = "error"
+      }
+    }
+  },
+
   mounted() {
     // Watch for window resize
     window.addEventListener("resize", () => {
