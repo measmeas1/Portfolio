@@ -32,9 +32,9 @@
       <!-- Text on the left -->
       <div class="flex flex-col items-center text-center md:items-start md:text-left gap-2 md:gap-1">
         <h1 class="text-4xl font-bold flex flex-col mb-1 items-center md:items-start lg:text-6xl xl:text-7xl">Hello, I'm <span class="text-green-400 text-7xl lg:text-8xl xl:text-9xl">Mab Meas</span></h1>
-        <h6 class="text-2xl font-medium lg:text-4xl xl-text-5xl mb-4">Software Developer</h6>
-        <br>
-        <p class="px-5 text-xl font-light max-w-2xl md:text-1xl lg:text-2xl xl:text-3xl">Welcome to my personal portfolio. I'm a software developer passionate about building interactive, eager to learn, grow, and contribute to real-world projects.</p>
+        <h6 class="text-2xl font-medium lg:text-4xl xl-text-5xl mb-8">Software Developer</h6>
+        
+        <p class="text-xl font-light max-w-2xl md:text-1xl lg:text-2xl xl:text-3xl">Welcome to my personal portfolio. I'm a software developer passionate about building interactive, eager to learn, grow, and contribute to real-world projects.</p>
         <button class="mt-5 py-2 px-4 rounded-md text-white bg-green-500 hover:bg-green-400">Get In Touch</button>
       </div>
       <!-- Image on the right -->
@@ -194,65 +194,67 @@
     </div>
 
     <!-- Contact Form -->
-    <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-      <form @submit.prevent="handleSubmit" name="contact" method="POST" data-netlify="true">
+    <!-- Contact Form -->
+  <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
+    <form @submit.prevent="handleSubmit" name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact">
-      <input type="hidden" name="redirect" value="https://measmeasportfolio.netlify.app/thank-you" />  
-        <!-- Name Field -->
-        <div class="mb-6">
-          <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
-          <input
-            v-model="form.name"
-            type="text"
-            id="name"
-            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-            required
-          />
-        </div>
+      <input type="hidden" name="redirect" value="https://measmeasportfolio.netlify.app/thank-you" />
 
-        <!-- Email Field -->
-        <div class="mb-6">
-          <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
-          <input
-            v-model="form.email"
-            type="email"
-            id="email"
-            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-            required
-          />
-        </div>
-
-        <!-- Message Field -->
-        <div class="mb-6">
-          <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
-          <textarea
-            v-model="form.message"
-            id="message"
-            rows="6"
-            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-            required
-          ></textarea>
-        </div>
-
-        <!-- Submit Button -->
-        <div class="flex justify-center mt-6">
-          <button
-            type="submit"
-            class="py-3 px-8 bg-green-500 text-white font-semibold rounded-md hover:bg-green-400 transition-all"
-          >
-            Send Message
-          </button>
-        </div>
-      </form>
-
-      <!-- Success/Error Messages -->
-      <div v-if="statue === 'success'" class="mt-6 text-center text-green-500">
-        <p>Your message has been sent successfully. Tank You!</p>
+      <!-- Name Field -->
+      <div class="mb-6">
+        <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
+        <input
+          v-model="form.name"
+          type="text"
+          id="name"
+          class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          required
+        />
       </div>
-      <div v-if="status === 'error'" class="mt-6 text-center text-red-500">
-        <p>There was an error sending your message. Please try again later.</p>
+
+      <!-- Email Field -->
+      <div class="mb-6">
+        <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
+        <input
+          v-model="form.email"
+          type="email"
+          id="email"
+          class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          required
+        />
       </div>
+
+      <!-- Message Field -->
+      <div class="mb-6">
+        <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
+        <textarea
+          v-model="form.message"
+          id="message"
+          rows="6"
+          class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center mt-6">
+        <button
+          type="submit"
+          class="py-3 px-8 bg-green-500 text-white font-semibold rounded-md hover:bg-green-400 transition-all"
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
+
+    <!-- Success/Error Messages -->
+    <div v-if="status === 'success'" class="mt-6 text-center text-green-500">
+      <p>Your message has been sent successfully. Thank you!</p>
     </div>
+    <div v-if="status === 'error'" class="mt-6 text-center text-red-500">
+      <p>There was an error sending your message. Please try again later.</p>
+    </div>
+  </div>
 
      <!-- Social Media Links -->
   <div class="mt-16 text-center border-t-2 pt-10">
@@ -314,35 +316,32 @@ export default {
         email: "",
         message: ""
       },
-      status: ""
+      status: "" // This will store the status of the form submission (success or error)
     };
   },
-  //Submit Form
   methods: {
-    async handleSubmit(){
-      try{
-        const response = await fetch('/', {
+    async handleSubmit() {
+      try {
+        const response = await fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams({
-            'form-name': "contact",
+            'form-name': 'contact',
             'name': this.form.name,
             'email': this.form.email,
             'message': this.form.message,
           })
-        }) ;
-        if (response.ok){
-          this.status = "success";
-          this.form = {
-            name: "",
-            email: "",
-            message: ""
-          };
-        }else{
-          this.status = "error";
+        });
+
+        if (response.ok) {
+          this.status = "success"; // If the form is sent successfully, show success message
+          this.form = { name: "", email: "", message: "" }; // Reset form fields
+        } else {
+          this.status = "error"; // If an error occurs during submission, show error message
         }
-      }catch (error){
-        this.status = "error"
+      } catch (error) {
+        console.error("Error during form submission:", error);
+        this.status = "error"; // Handle error case
       }
     }
   },
