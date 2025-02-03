@@ -46,7 +46,7 @@
 
   <section id="about" class="py-20">
     <div class="text-center">
-      <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-center underline pt-5">About <span class="text-green-400">Me</span></h2>
+      <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-center underline pt-5 font-bold">About <span class="text-green-400">Me</span></h2>
       <p class="text-xl px-20 py-10 md:py-20 md:px-40 md:text-justify md:text-1xl lg:text-2xl xl:text-3xl">I’m <span class="text-green-400">Mab Meas</span>, a dedicated software development student at Norton University. I have a solid grasp of core programming languages like Java, JavaScript, Node.js and Python, along with experience in web development using HTML, CSS, and frameworks such as Vue and Tailwind. I’m also gaining experience with mobile development in Flutter and working with databases using MySQL.    
         
         I’m always eager to learn more and improve my skills, and I’m looking for an internship to further expand my knowledge while contributing to meaningful projects.   
@@ -56,7 +56,7 @@
 
   <section id="skills" class="py-10 lg:py-40">
   <div class="text-center">
-    <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-400 to-white text-transparent bg-clip-text">Skills</h2>
+    <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-400 to-white text-transparent bg-clip-text font-bold">Skills</h2>
   </div>
 
   <!-- Skill Icons Grid -->
@@ -143,9 +143,123 @@
   </div>
 </section>
 
-<section>
-  
-</section>
+<section id="projects" class="py-40">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-white to-green-400 text-transparent bg-clip-text font-bold">Projects</h2>
+    </div>
+    <!-- Project Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
+      <!-- Project 1 -->
+      <div class="bg-slate-600 rounded-lg shadow-md">
+        <img src="./assets/logo_2.jpg" alt="Project 1" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Project 1</h3>
+          <div class="flex justify-between mt-4">
+            <a href="https://github.com/yourusername/project1" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md">GitHub</a>
+            <a href="https://yourdemo.com/project1" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-md">Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-slate-800 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
+      <img src="./assets/logo_2.jpg" alt="Project 3" class="w-full h-56 object-cover rounded-t-lg" />
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold text-gray mb-2">Project 3</h3>
+        <p class="text-sm text-gray-300 mb-4">An e-commerce platform for buying and selling products online.</p>
+        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Stripe API</p>
+        <div class="flex justify-between mt-6">
+          <a href="https://github.com/yourusername/project3" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://yourdemo.com/project3" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
+            <i class="fas fa-external-link-alt mr-2"></i> Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <!-- Project 3 -->
+      <div class="bg-gray-100 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
+      <img src="./assets/project3.jpg" alt="Project 3" class="w-full h-56 object-cover rounded-t-lg" />
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Project 3</h3>
+        <p class="text-sm text-gray-600 mb-4">An e-commerce platform for buying and selling products online.</p>
+        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Stripe API</p>
+        <div class="flex justify-between mt-6">
+          <a href="https://github.com/yourusername/project3" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://yourdemo.com/project3" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
+            <i class="fas fa-external-link-alt mr-2"></i> Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <!-- Project 4 -->
+    <div class="bg-slate-600 rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
+      <img src="./assets/logo_2.jpg" alt="Project 1" class="w-full h-56 object-cover rounded-t-lg" />
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Project 1</h3>
+        <p class="text-gray-300 text-sm mt-2">A web app to manage tasks and projects efficiently with a clean UI.</p>
+        <p class="text-sm text-green-500 mt-2">Vue.js | Tailwind CSS | Firebase</p>
+        <div class="flex justify-between mt-4">
+          <a href="https://github.com/yourusername/project1" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://yourdemo.com/project1" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-md">
+            <i class="fas fa-external-link-alt mr-2"></i> Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="bg-white border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
+      <img src="./assets/logo_2.jpg" alt="Project 1" class="w-full h-56 object-cover rounded-t-lg" />
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Project 1</h3>
+        <p class="text-sm text-gray-600 mb-4">A web app to manage tasks and projects efficiently with a clean UI.</p>
+        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Firebase</p>
+        <div class="flex justify-between mt-6">
+          <a href="https://github.com/yourusername/project1" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://yourdemo.com/project1" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
+            <i class="fas fa-external-link-alt mr-2"></i> Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
+      <img src="./assets/project3.jpg" alt="Project 3" class="w-full h-56 object-cover rounded-t-lg" />
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Project 3</h3>
+        <p class="text-sm text-gray-600 mb-4">An e-commerce platform for buying and selling products online.</p>
+        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Stripe API</p>
+        <div class="flex justify-between mt-6">
+          <a href="https://github.com/yourusername/project3" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://yourdemo.com/project3" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
+            <i class="fas fa-external-link-alt mr-2"></i> Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="py-40">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-500 via-slate-300 to-green-500 text-transparent bg-clip-text font-bold">Contact</h2>
+      <p class="text-xl mt-4">I would love to hear from you! Please leave a message below.</p>
+    </div>
+    
+  </section>
 
 
 </template>
