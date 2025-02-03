@@ -150,22 +150,11 @@
     <!-- Project Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
       <!-- Project 1 -->
-      <div class="bg-slate-600 rounded-lg shadow-md">
-        <img src="./assets/logo_2.jpg" alt="Project 1" class="w-full h-56 object-cover rounded-t-lg" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Project 1</h3>
-          <div class="flex justify-between mt-4">
-            <a href="https://github.com/yourusername/project1" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md">GitHub</a>
-            <a href="https://yourdemo.com/project1" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-md">Demo</a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 2 -->
       <div class="bg-slate-800 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
       <img src="./assets/logo_2.jpg" alt="Project 3" class="w-full h-56 object-cover rounded-t-lg" />
       <div class="p-6">
-        <h3 class="text-2xl font-semibold text-gray mb-2">Project 3</h3>
+        <h3 class="text-2xl font-semibold text-gray mb-2">Project 1</h3>
         <p class="text-sm text-gray-300 mb-4">An e-commerce platform for buying and selling products online.</p>
         <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Stripe API</p>
         <div class="flex justify-between mt-6">
@@ -178,78 +167,6 @@
         </div>
       </div>
     </div>
-
-      <!-- Project 3 -->
-      <div class="bg-gray-100 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
-      <img src="./assets/project3.jpg" alt="Project 3" class="w-full h-56 object-cover rounded-t-lg" />
-      <div class="p-6">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Project 3</h3>
-        <p class="text-sm text-gray-600 mb-4">An e-commerce platform for buying and selling products online.</p>
-        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Stripe API</p>
-        <div class="flex justify-between mt-6">
-          <a href="https://github.com/yourusername/project3" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
-            <i class="fab fa-github mr-2"></i> GitHub
-          </a>
-          <a href="https://yourdemo.com/project3" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
-            <i class="fas fa-external-link-alt mr-2"></i> Demo
-          </a>
-        </div>
-      </div>
-    </div>
-
-      <!-- Project 4 -->
-    <div class="bg-slate-600 rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
-      <img src="./assets/logo_2.jpg" alt="Project 1" class="w-full h-56 object-cover rounded-t-lg" />
-      <div class="p-4">
-        <h3 class="text-xl font-semibold">Project 1</h3>
-        <p class="text-gray-300 text-sm mt-2">A web app to manage tasks and projects efficiently with a clean UI.</p>
-        <p class="text-sm text-green-500 mt-2">Vue.js | Tailwind CSS | Firebase</p>
-        <div class="flex justify-between mt-4">
-          <a href="https://github.com/yourusername/project1" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md">
-            <i class="fab fa-github mr-2"></i> GitHub
-          </a>
-          <a href="https://yourdemo.com/project1" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-md">
-            <i class="fas fa-external-link-alt mr-2"></i> Demo
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 5 -->
-    <div class="bg-white border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
-      <img src="./assets/logo_2.jpg" alt="Project 1" class="w-full h-56 object-cover rounded-t-lg" />
-      <div class="p-6">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Project 1</h3>
-        <p class="text-sm text-gray-600 mb-4">A web app to manage tasks and projects efficiently with a clean UI.</p>
-        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Firebase</p>
-        <div class="flex justify-between mt-6">
-          <a href="https://github.com/yourusername/project1" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
-            <i class="fab fa-github mr-2"></i> GitHub
-          </a>
-          <a href="https://yourdemo.com/project1" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
-            <i class="fas fa-external-link-alt mr-2"></i> Demo
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
-      <img src="./assets/project3.jpg" alt="Project 3" class="w-full h-56 object-cover rounded-t-lg" />
-      <div class="p-6">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Project 3</h3>
-        <p class="text-sm text-gray-600 mb-4">An e-commerce platform for buying and selling products online.</p>
-        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Stripe API</p>
-        <div class="flex justify-between mt-6">
-          <a href="https://github.com/yourusername/project3" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
-            <i class="fab fa-github mr-2"></i> GitHub
-          </a>
-          <a href="https://yourdemo.com/project3" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
-            <i class="fas fa-external-link-alt mr-2"></i> Demo
-          </a>
-        </div>
-      </div>
-    </div>
-
     </div>
   </section>
 
