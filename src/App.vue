@@ -34,7 +34,7 @@
         <h1 class="text-4xl font-bold flex flex-col mb-1 items-center md:items-start lg:text-6xl xl:text-7xl">Hello, I'm <span class="text-green-400 text-7xl lg:text-8xl xl:text-9xl">Mab Meas</span></h1>
         <h6 class="text-2xl font-medium lg:text-4xl xl-text-5xl mb-4">Software Developer</h6>
         <br>
-        <p class="text-xl font-light max-w-2xl md:text-1xl lg:text-2xl xl:text-3xl">Welcome to my personal portfolio. I'm a software developer passionate about building interactive, eager to learn, grow, and contribute to real-world projects.</p>
+        <p class="px-5 text-xl font-light max-w-2xl md:text-1xl lg:text-2xl xl:text-3xl">Welcome to my personal portfolio. I'm a software developer passionate about building interactive, eager to learn, grow, and contribute to real-world projects.</p>
         <button class="mt-5 py-2 px-4 rounded-md text-white bg-green-500 hover:bg-green-400">Get In Touch</button>
       </div>
       <!-- Image on the right -->
@@ -47,7 +47,7 @@
   <section id="about" class="py-20">
     <div class="text-center">
       <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-center underline pt-5 font-bold">About <span class="text-green-400">Me</span></h2>
-      <p class="text-xl px-20 py-10 md:py-20 md:px-40 md:text-justify md:text-1xl lg:text-2xl xl:text-3xl">I’m <span class="text-green-400">Mab Meas</span>, a dedicated software development student at Norton University. I have a solid grasp of core programming languages like Java, JavaScript, Node.js and Python, along with experience in web development using HTML, CSS, and frameworks such as Vue and Tailwind. I’m also gaining experience with mobile development in Flutter and working with databases using MySQL.    
+      <p class="text-xl px-5 py-10 md:py-20 md:px-40 md:text-justify md:text-1xl lg:text-2xl xl:text-3xl">I’m <span class="text-green-400">Mab Meas</span>, a dedicated software development student at Norton University. I have a solid grasp of core programming languages like Java, JavaScript, Node.js and Python, along with experience in web development using HTML, CSS, and frameworks such as Vue and Tailwind. I’m also gaining experience with mobile development in Flutter and working with databases using MySQL.    
         
         I’m always eager to learn more and improve my skills, and I’m looking for an internship to further expand my knowledge while contributing to meaningful projects.   
       </p>
@@ -253,12 +253,109 @@
     </div>
   </section>
 
-  <section id="contact" class="py-40">
+  <section id="contact" class="py-40 ">
     <div class="text-center mb-16">
-      <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-500 via-slate-300 to-green-500 text-transparent bg-clip-text font-bold">Contact</h2>
-      <p class="text-xl mt-4">I would love to hear from you! Please leave a message below.</p>
+      <h2 class="text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-500 via-slate-300 to-green-500 text-transparent bg-clip-text font-bold">Contact</h2>
+      <p class="px-5 text-xl md:text-1xl lg:text-2xl xl:text-3xl mt-5 md:mt-10 font-light">I would love to hear from you! Please leave a message below.</p>
     </div>
-    
+
+    <!-- Contact Form -->
+    <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
+      <form action="https://formspree.io/mabmeas12@gmail.com" method="POST">
+        <!-- Name Field -->
+        <div class="mb-6">
+          <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
+          <input
+            v-model="name"
+            type="text"
+            id="name"
+            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+            required
+          />
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-6">
+          <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
+          <input
+            v-model="email"
+            type="email"
+            id="email"
+            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+            required
+          />
+        </div>
+
+        <!-- Message Field -->
+        <div class="mb-6">
+          <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
+          <textarea
+            v-model="message"
+            id="message"
+            rows="6"
+            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-center mt-6">
+          <button
+            type="submit"
+            class="py-3 px-8 bg-green-500 text-white font-semibold rounded-md hover:bg-green-400 transition-all"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+
+      <!-- Success/Error Messages -->
+      <div v-if="successMessage" class="mt-6 text-center text-green-500">
+        <p>Your message has been sent successfully!</p>
+      </div>
+      <div v-if="errorMessage" class="mt-6 text-center text-red-500">
+        <p>There was an error sending your message. Please try again later.</p>
+      </div>
+    </div>
+
+     <!-- Social Media Links -->
+  <div class="mt-16 text-center border-t-2 pt-10">
+    <h3 class="text-3xl md:text-4xl xl:text-5xl font-semibold text-white mb-6 underline">Connect <span class="text-green-400">with</span> Me</h3>
+    <div class="flex justify-center gap-10 md:gap-24 flex-wrap mt-10">
+      <!-- Email -->
+      <div class="transform transition-transform duration-300 hover:scale-125 text-center">
+        <a href="mailto:mabmeas12@gmail.com" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">Mail</p>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="transform transition-transform duration-300 hover:scale-125 text-center">
+        <a href="https://www.linkedin.com/in/mab-meas-89a8a3335/" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">LinkedIn</p>
+      </div>
+
+      <!-- Instagram -->
+      <div class="transform transition-transform duration-300 hover:scale-125 text-center">
+        <a href="https://www.instagram.com/meas_dudu/" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">Instagram</p>
+      </div>
+
+      <!-- GitHub -->
+      <div class="transform transition-transform duration-300 hover:scale-125 text-center">
+        <a href="https://github.com/measmeas1" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
+          <i class="fab fa-github"></i>
+        </a>
+        <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">GitHub</p>
+      </div>
+    </div>
+  </div>
+
   </section>
 
 
