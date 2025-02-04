@@ -200,18 +200,20 @@
 
       <!-- Name Field -->
       <div class="mb-6">
-        <label class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name<input
+        <label class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name
+          <input
           type="text"
           id="name"
           name="name"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
-        /></label>
+        />
+      </label>
       </div>
 
       <!-- Email Field -->
       <div class="mb-6">
-        <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email
+        <label class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email
           <input
           type="email"
           id="email"
@@ -220,12 +222,11 @@
           required
         />
         </label>
-        
       </div>
 
       <!-- Message Field -->
       <div class="mb-6">
-        <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message
+        <label class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message
           <textarea
           id="message"
           name="message"
