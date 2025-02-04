@@ -196,8 +196,8 @@
     <!-- Contact Form -->
     <!-- Contact Form -->
   <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-    <form @submit.prevent="handleSubmit" name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact">
+    <form name="contact" method="POST" data-netlify="true" @submit.prevent="handleSubmit">
+      <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="redirect" value="https://measmeasportfolio.netlify.app/thank-you" />
 
       <!-- Name Field -->
@@ -207,6 +207,7 @@
           v-model="form.name"
           type="text"
           id="name"
+          name="name"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
         />
@@ -219,6 +220,7 @@
           v-model="form.email"
           type="email"
           id="email"
+          name="email"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
         />
@@ -230,6 +232,7 @@
         <textarea
           v-model="form.message"
           id="message"
+          name="message"
           rows="6"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
@@ -247,7 +250,7 @@
       </div>
     </form>
 
-    <!-- Success/Error Messages -->
+      <!-- Success/Error Messages -->
     <div v-if="status === 'success'" class="mt-6 text-center text-green-500">
       <p>Your message has been sent successfully. Thank you!</p>
     </div>
