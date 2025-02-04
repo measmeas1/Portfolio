@@ -202,7 +202,7 @@
       <div class="mb-6">
         <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
         <input
-          v-model="formData.name"
+          v-model="name"
           type="text"
           id="name"
           name="name"
@@ -215,7 +215,7 @@
       <div class="mb-6">
         <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
         <input
-          v-model="formData.email"
+          v-model="email"
           type="email"
           id="email"
           name="email"
@@ -228,7 +228,7 @@
       <div class="mb-6">
         <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
         <textarea
-          v-model="formData.message"
+          v-model="message"
           id="message"
           name="message"
           rows="6"
@@ -249,9 +249,13 @@
     </form>
 
     <!-- Thank You Message -->
-    <div v-if="formSubmitted" class="mt-8 text-center bg-green-500 text-white p-4 rounded-lg">
+    <!-- <div v-if="formSubmitted" class="mt-8 text-center text-white p-4 rounded-lg">
       <h3 class="text-2xl">Thank you for your message!</h3>
       <p>Your message has been sent successfully. We will get back to you soon!</p>
+    </div> -->
+
+    <div v-if="formStatus" class="mt-4">
+      <p :class="formStatus.success ? 'text-green-500' : 'text-red-500'">{{ formStatus.message }}</p>
     </div>
     
   </div>
@@ -310,27 +314,43 @@ export default {
       isMobile: window.innerWidth < 768,
       activeSection: "home",  
 
-      formData:{
-        name: "",
-        email: "",
-        message: "",
-      },
-      formSubmitted: false
+      name: '',
+      email: '',
+      message: '',
+      formStatus: null,
     };
   },
 
   methods: {
-    submitForm(){
-      this.formSubmitted = true;
+    async submitForm() {
+      // Create FormData object for submission
+      const formData = new FormData();
+      formData.append('form-name', 'contact'); // Important: The name matches the form name you use in Netlify
+      formData.append('name', this.name);
+      formData.append('email', this.email);
+      formData.append('message', this.message);
 
-      // Optionally, reset the form if needed
-      this.formData.name = "";
-      this.formData.email = "";
-      this.formData.message = "";
+      try {
+        // Send the form data to Netlify
+        const response = await fetch('/', {
+          method: 'POST',
+          body: formData,
+        });
 
-      // You could add the actual form submission code here (e.g., using axios or just relying on Netlify forms)
-      console.log("Form submitted successfully:", this.formData);
-    }
+        // Check if the response is successful
+        if (response.ok) {
+          this.formStatus = { success: true, message: 'Thank you for your submission!' };
+          // Reset form data
+          this.name = '';
+          this.email = '';
+          this.message = '';
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        this.formStatus = { success: false, message: 'Something went wrong. Please try again later.' };
+      }
+    },
   },
   
 
