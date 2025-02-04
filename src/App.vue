@@ -194,9 +194,8 @@
     </div>
 
     <!-- Contact Form -->
-    <!-- Contact Form -->
   <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-    <form name="contact" method="POST" data-netlify="true" @submit.prevent="handleSubmit">
+    <form @submit.prevent="submitForm" name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="redirect" value="https://measmeasportfolio.netlify.app/thank-you" />
 
@@ -204,7 +203,7 @@
       <div class="mb-6">
         <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
         <input
-          v-model="form.name"
+          v-model="formData.name"
           type="text"
           id="name"
           name="name"
@@ -217,7 +216,7 @@
       <div class="mb-6">
         <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
         <input
-          v-model="form.email"
+          v-model="formData.email"
           type="email"
           id="email"
           name="email"
@@ -230,7 +229,7 @@
       <div class="mb-6">
         <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
         <textarea
-          v-model="form.message"
+          v-model="formData.message"
           id="message"
           name="message"
           rows="6"
@@ -249,14 +248,6 @@
         </button>
       </div>
     </form>
-
-      <!-- Success/Error Messages -->
-    <div v-if="status === 'success'" class="mt-6 text-center text-green-500">
-      <p>Your message has been sent successfully. Thank you!</p>
-    </div>
-    <div v-if="status === 'error'" class="mt-6 text-center text-red-500">
-      <p>There was an error sending your message. Please try again later.</p>
-    </div>
   </div>
 
      <!-- Social Media Links -->
@@ -314,34 +305,23 @@ export default {
       activeSection: "home",  
       
       //Contact form
-      form: {
+      formData: {
         name: "",
         email: "",
         message: ""
       }, 
-      status: "" // This will store the status of the form submission (success or error)
     };
   },
   methods: {
-    async handleSubmit(event) {
-      // Prevent the default form behavior
-      event.preventDefault();
-
-      // You can add your custom form submission logic here
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.form)
-      });
-
-      if (response.ok) {
-        console.log('Form successfully submitted');
-        // Redirect after submission
-        window.location.href = '/thank-you';
+    submitForm() {
+      // Validate form data
+      if (this.formData.name && this.formData.email && this.formData.message) {
+        // Send form data to your server using a form submission API or a library like axios
+        console.log("Form submitted successfully:", this.formData);
       } else {
-        console.log('Error in form submission');
+        console.error("Form data is missing or invalid.");
       }
-    }
+    },
   },
 
   mounted() {
