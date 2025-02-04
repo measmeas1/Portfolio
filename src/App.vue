@@ -254,7 +254,7 @@
       <p>Your message has been sent successfully. We will get back to you soon!</p>
     </div> -->
 
-    <div v-if="formStatus" class="mt-4">
+    <div v-if="formStatus" class="mt-4 text-center">
       <p :class="formStatus.success ? 'text-green-500' : 'text-red-500'">{{ formStatus.message }}</p>
     </div>
     
