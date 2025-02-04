@@ -195,14 +195,14 @@
 
     <!-- Contact Form -->
   <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" @submit.prevent="submitForm">
       <input type="hidden" name="form-name" value="contact" />
-      <input type="hidden" name="redirect" value="https://measmeasportfolio.netlify.app/thank-you" />
 
       <!-- Name Field -->
       <div class="mb-6">
         <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
         <input
+          v-model="FormData.name"
           type="text"
           id="name"
           name="name"
@@ -215,6 +215,7 @@
       <div class="mb-6">
         <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
         <input
+          v-model="FormData.email"
           type="email"
           id="email"
           name="email"
@@ -227,6 +228,7 @@
       <div class="mb-6">
         <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
         <textarea
+          v-model="FormData.message"
           id="message"
           name="message"
           rows="6"
@@ -245,6 +247,13 @@
         </button>
       </div>
     </form>
+
+    <!-- Thank You Message -->
+    <div v-if="formSubmitted" class="mt-8 text-center bg-green-500 text-white p-4 rounded-lg">
+      <h3 class="text-2xl">Thank you for your message!</h3>
+      <p>Your message has been sent successfully. We will get back to you soon!</p>
+    </div>
+    
   </div>
 
      <!-- Social Media Links -->
@@ -300,7 +309,28 @@ export default {
     return {
       isMobile: window.innerWidth < 768,
       activeSection: "home",  
+
+      formData:{
+        name: "",
+        email: "",
+        message: "",
+      },
+      formSubmitted: false
     };
+  },
+
+  methods: {
+    submitForm(){
+      this.formSubmitted = true;
+
+      // Optionally, reset the form if needed
+      this.formData.name = "";
+      this.formData.email = "";
+      this.formData.message = "";
+          
+      // You could add the actual form submission code here (e.g., using axios or just relying on Netlify forms)
+      console.log("Form submitted successfully:", this.formData);
+    }
   },
   
 
