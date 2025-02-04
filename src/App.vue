@@ -202,7 +202,7 @@
       <div class="mb-6">
         <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
         <input
-          v-model="FormData.name"
+          v-model="formData.name"
           type="text"
           id="name"
           name="name"
@@ -215,7 +215,7 @@
       <div class="mb-6">
         <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
         <input
-          v-model="FormData.email"
+          v-model="formData.email"
           type="email"
           id="email"
           name="email"
@@ -228,7 +228,7 @@
       <div class="mb-6">
         <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
         <textarea
-          v-model="FormData.message"
+          v-model="formData.message"
           id="message"
           name="message"
           rows="6"
@@ -327,7 +327,7 @@ export default {
       this.formData.name = "";
       this.formData.email = "";
       this.formData.message = "";
-          
+
       // You could add the actual form submission code here (e.g., using axios or just relying on Netlify forms)
       console.log("Form submitted successfully:", this.formData);
     }
