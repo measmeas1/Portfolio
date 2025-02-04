@@ -195,46 +195,46 @@
 
     <!-- Contact Form -->
   <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-    <form name="contact" method="POST" data-netlify="true" @submit.prevent="submitForm">
+    <form name="contact" netlify>
       <input type="hidden" name="form-name" value="contact" />
 
       <!-- Name Field -->
       <div class="mb-6">
-        <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
-        <input
-          v-model="name"
+        <label class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name<input
           type="text"
           id="name"
           name="name"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
-        />
+        /></label>
       </div>
 
       <!-- Email Field -->
       <div class="mb-6">
-        <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
-        <input
-          v-model="email"
+        <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email
+          <input
           type="email"
           id="email"
           name="email"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
         />
+        </label>
+        
       </div>
 
       <!-- Message Field -->
       <div class="mb-6">
-        <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
-        <textarea
-          v-model="message"
+        <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message
+          <textarea
           id="message"
           name="message"
           rows="6"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
         ></textarea>
+        </label>
+
       </div>
 
       <!-- Submit Button -->
@@ -247,17 +247,6 @@
         </button>
       </div>
     </form>
-
-    <!-- Thank You Message -->
-    <!-- <div v-if="formSubmitted" class="mt-8 text-center text-white p-4 rounded-lg">
-      <h3 class="text-2xl">Thank you for your message!</h3>
-      <p>Your message has been sent successfully. We will get back to you soon!</p>
-    </div> -->
-
-    <div v-if="formStatus" class="mt-4 text-center">
-      <p :class="formStatus.success ? 'text-green-500' : 'text-red-500'">{{ formStatus.message }}</p>
-    </div>
-    
   </div>
 
      <!-- Social Media Links -->
@@ -313,46 +302,8 @@ export default {
     return {
       isMobile: window.innerWidth < 768,
       activeSection: "home",  
-
-      name: '',
-      email: '',
-      message: '',
-      formStatus: null,
     };
   },
-
-  methods: {
-    async submitForm() {
-      // Create FormData object for submission
-      const formData = new FormData();
-      formData.append('form-name', 'contact'); // Important: The name matches the form name you use in Netlify
-      formData.append('name', this.name);
-      formData.append('email', this.email);
-      formData.append('message', this.message);
-
-      try {
-        // Send the form data to Netlify
-        const response = await fetch('/', {
-          method: 'POST',
-          body: formData,
-        });
-
-        // Check if the response is successful
-        if (response.ok) {
-          this.formStatus = { success: true, message: 'Thank you for your submission!' };
-          // Reset form data
-          this.name = '';
-          this.email = '';
-          this.message = '';
-        } else {
-          throw new Error('Submission failed');
-        }
-      } catch (error) {
-        this.formStatus = { success: false, message: 'Something went wrong. Please try again later.' };
-      }
-    },
-  },
-  
 
   mounted() {
     // Watch for window resize
