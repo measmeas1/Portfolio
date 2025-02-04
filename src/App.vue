@@ -318,33 +318,28 @@ export default {
         name: "",
         email: "",
         message: ""
-      },
+      }, 
       status: "" // This will store the status of the form submission (success or error)
     };
   },
   methods: {
-    async handleSubmit() {
-      try {
-        const response = await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams({
-            'form-name': 'contact',
-            'name': this.form.name,
-            'email': this.form.email,
-            'message': this.form.message,
-          })
-        });
+    async handleSubmit(event) {
+      // Prevent the default form behavior
+      event.preventDefault();
 
-        if (response.ok) {
-          this.status = "success"; // If the form is sent successfully, show success message
-          this.form = { name: "", email: "", message: "" }; // Reset form fields
-        } else {
-          this.status = "error"; // If an error occurs during submission, show error message
-        }
-      } catch (error) {
-        console.error("Error during form submission:", error);
-        this.status = "error"; // Handle error case
+      // You can add your custom form submission logic here
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.form)
+      });
+
+      if (response.ok) {
+        console.log('Form successfully submitted');
+        // Redirect after submission
+        window.location.href = '/thank-you';
+      } else {
+        console.log('Error in form submission');
       }
     }
   },
