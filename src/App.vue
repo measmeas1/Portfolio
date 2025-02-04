@@ -195,7 +195,7 @@
 
     <!-- Contact Form -->
   <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-    <form @submit.prevent="submitForm" name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="redirect" value="https://measmeasportfolio.netlify.app/thank-you" />
 
@@ -303,25 +303,7 @@ export default {
     return {
       isMobile: window.innerWidth < 768,
       activeSection: "home",  
-      
-      //Contact form
-      formData: {
-        name: "",
-        email: "",
-        message: ""
-      }, 
     };
-  },
-  methods: {
-    submitForm() {
-      // Validate form data
-      if (this.formData.name && this.formData.email && this.formData.message) {
-        // Send form data to your server using a form submission API or a library like axios
-        console.log("Form submitted successfully:", this.formData);
-      } else {
-        console.error("Form data is missing or invalid.");
-      }
-    },
   },
 
   mounted() {
