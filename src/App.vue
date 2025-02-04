@@ -203,7 +203,6 @@
       <div class="mb-6">
         <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name</label>
         <input
-          v-model="formData.name"
           type="text"
           id="name"
           name="name"
@@ -216,7 +215,6 @@
       <div class="mb-6">
         <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email</label>
         <input
-          v-model="formData.email"
           type="email"
           id="email"
           name="email"
@@ -229,7 +227,6 @@
       <div class="mb-6">
         <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message</label>
         <textarea
-          v-model="formData.message"
           id="message"
           name="message"
           rows="6"
@@ -305,6 +302,7 @@ export default {
       activeSection: "home",  
     };
   },
+  
 
   mounted() {
     // Watch for window resize
