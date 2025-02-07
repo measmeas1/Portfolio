@@ -252,50 +252,69 @@
     </form>
   </div>
 
-  <div v-if="formStatue">
-    <p>{{ formStatue }}</p>
+  <div v-if="formStatue" class="mt-6 text-center">
+    <p class="text-xl text-white">{{ formStatue }}</p>
   </div>
 
      <!-- Social Media Links -->
-  <div class="mt-16 text-center border-t-2 pt-10">
-    <h3 class="text-3xl md:text-4xl xl:text-5xl font-semibold text-white mb-6 underline">Connect <span class="text-green-400">with</span> Me</h3>
-    <div class="flex justify-center gap-10 md:gap-24 flex-wrap mt-10">
-      <!-- Email -->
-      <div class="transform transition-transform duration-300 hover:scale-125 text-center">
-        <a href="mailto:mabmeas12@gmail.com" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">Mail</p>
-      </div>
-
-      <!-- LinkedIn -->
-      <div class="transform transition-transform duration-300 hover:scale-125 text-center">
-        <a href="https://www.linkedin.com/in/mab-meas-89a8a3335/" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">LinkedIn</p>
-      </div>
-
-      <!-- Instagram -->
-      <div class="transform transition-transform duration-300 hover:scale-125 text-center">
-        <a href="https://www.instagram.com/meas_dudu/" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">Instagram</p>
-      </div>
-
-      <!-- GitHub -->
-      <div class="transform transition-transform duration-300 hover:scale-125 text-center">
-        <a href="https://github.com/measmeas1" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
-          <i class="fab fa-github"></i>
-        </a>
-        <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">GitHub</p>
-      </div>
-    </div>
-  </div>
-
+  
   </section>
 
+  <footer class="bg-gray-900 text-white py-10 mt-20">
+    <div class="max-w-screen-xl mx-auto text-center">
+      <h3 class="text-3xl md:text-4xl xl:text-5xl font-semibold text-white mb-6 underline">Connect <span class="text-green-400">with</span> Me</h3>
+      
+      <!-- Social Media Icons -->
+      <div class="flex justify-center gap-10 md:gap-16 mt-10">
+        <!-- Email -->
+        <div class="transform transition-transform duration-300 hover:scale-110 text-center">
+          <a href="mailto:mabmeas12@gmail.com" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">Email</p>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="transform transition-transform duration-300 hover:scale-110 text-center">
+          <a href="https://www.linkedin.com/in/mab-meas-89a8a3335/" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">LinkedIn</p>
+        </div>
+
+        <!-- Instagram -->
+        <div class="transform transition-transform duration-300 hover:scale-110 text-center">
+          <a href="https://www.instagram.com/meas_dudu/" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">Instagram</p>
+        </div>
+
+        <!-- GitHub -->
+        <div class="transform transition-transform duration-300 hover:scale-110 text-center">
+          <a href="https://github.com/measmeas1" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
+            <i class="fab fa-github"></i>
+          </a>
+          <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">GitHub</p>
+        </div>
+      </div>
+
+      <!-- Footer Text -->
+      <!-- Footer Text with SVG Icons -->
+<div class="mt-10">
+  <p class="text-lg md:text-xl xl:text-2xl font-light">
+    Made with 
+    <!-- Vue.js SVG Icon with Continuous Animation -->
+    <img src="./assets/vue.svg" class="inline-block w-8 h-8 text-green-500 animate-pulse">
+    and
+    <!-- Tailwind CSS SVG Icon with Continuous Animation -->
+    <img src="./assets/tailwind.svg" class="inline-block w-8 h-8 text-blue-500 animate-bounce"/>
+    CSS. All Rights Reserved © 2025
+  </p>
+</div>
+
+    </div>
+  </footer>
 
 </template>
 
@@ -409,4 +428,25 @@ a.text-green-500 {
   100% { width: 100%; }
 }
 
+footer {
+  background-color: #1a202c;
+  color: #fff;
+  padding-top: 20px;
+}
+
+footer .text-green-500 {
+  color: #48bb78; /* Green color for hover */
+}
+
+footer .transform:hover {
+  transform: scale(1.15);
+}
+
+footer i {
+  transition: transform 0.3s ease;
+}
+
+footer i:hover {
+  transform: translateY(-5px);
+}
 </style>

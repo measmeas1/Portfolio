@@ -4,9 +4,39 @@ export default (await import('vue')).defineComponent({
     components: { Mobile },
     data() {
         return {
+            form: {
+                name: '',
+                email: '',
+                message: '',
+            },
+            formStatue: '',
             isMobile: window.innerWidth < 768,
             activeSection: "home",
         };
+    },
+    methods: {
+        submitForm() {
+            const formData = new FormData();
+            formData.append("name", this.form.name);
+            formData.append("email", this.form.email);
+            formData.append("message", this.form.message);
+            fetch("/", {
+                method: "POST",
+                body: formData,
+            })
+                .then(() => {
+                this.formStatue = "Thank You for your message!";
+                this.resetForm();
+            })
+                .catch((error) => {
+                this.formStatue = "Error sending message. Please try again later.";
+            });
+        },
+        resetForm() {
+            this.form.name = '';
+            this.form.email = '';
+            this.form.message = '';
+        }
     },
     mounted() {
         // Watch for window resize
@@ -41,6 +71,7 @@ function __VLS_template() {
     const __VLS_componentsOption = { Mobile };
     let __VLS_components;
     let __VLS_directives;
+    ['text-green-500',];
     // CSS variable injection 
     // CSS variable injection end 
     __VLS_elementAsFunction(__VLS_intrinsicElements.header, __VLS_intrinsicElements.header)({
@@ -112,11 +143,10 @@ function __VLS_template() {
         ...{ class: ("text-green-400 text-7xl lg:text-8xl xl:text-9xl") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.h6, __VLS_intrinsicElements.h6)({
-        ...{ class: ("text-2xl font-medium lg:text-4xl xl-text-5xl mb-4") },
+        ...{ class: ("text-2xl font-medium lg:text-4xl xl-text-5xl mb-8") },
     });
-    __VLS_elementAsFunction(__VLS_intrinsicElements.br, __VLS_intrinsicElements.br)({});
     __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({
-        ...{ class: ("px-5 text-xl font-light max-w-2xl md:text-1xl lg:text-2xl xl:text-3xl") },
+        ...{ class: ("text-xl font-light max-w-2xl md:text-1xl lg:text-2xl xl:text-3xl") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({
         ...{ class: ("mt-5 py-2 px-4 rounded-md text-white bg-green-500 hover:bg-green-400") },
@@ -351,6 +381,45 @@ function __VLS_template() {
     __VLS_elementAsFunction(__VLS_intrinsicElements.i, __VLS_intrinsicElements.i)({
         ...{ class: ("fas fa-external-link-alt mr-2") },
     });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
+        ...{ class: ("bg-slate-800 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.img)({
+        src: ("./assets/logo_2.jpg"),
+        alt: ("Project 3"),
+        ...{ class: ("w-full h-56 object-cover rounded-t-lg") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
+        ...{ class: ("p-6") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.h3, __VLS_intrinsicElements.h3)({
+        ...{ class: ("text-2xl font-semibold text-gray mb-2") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({
+        ...{ class: ("text-sm text-gray-300 mb-4") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({
+        ...{ class: ("text-xs text-green-500 font-medium") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
+        ...{ class: ("flex justify-between mt-6") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({
+        href: ("https://github.com/yourusername/project3"),
+        target: ("_blank"),
+        ...{ class: ("bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.i, __VLS_intrinsicElements.i)({
+        ...{ class: ("fab fa-github mr-2") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({
+        href: ("https://yourdemo.com/project3"),
+        target: ("_blank"),
+        ...{ class: ("bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.i, __VLS_intrinsicElements.i)({
+        ...{ class: ("fas fa-external-link-alt mr-2") },
+    });
     __VLS_elementAsFunction(__VLS_intrinsicElements.section, __VLS_intrinsicElements.section)({
         id: ("contact"),
         ...{ class: ("py-40 ") },
@@ -368,8 +437,15 @@ function __VLS_template() {
         ...{ class: ("max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.form, __VLS_intrinsicElements.form)({
-        action: ("https://formspree.io/mabmeas12@gmail.com"),
+        ...{ onSubmit: (__VLS_ctx.submitForm) },
+        name: ("contact"),
+        'data-netlify': ("true"),
         method: ("POST"),
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.input)({
+        type: ("hidden"),
+        name: ("form-name"),
+        value: ("contact"),
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
         ...{ class: ("mb-6") },
@@ -379,9 +455,10 @@ function __VLS_template() {
         ...{ class: ("block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.input)({
-        value: ((__VLS_ctx.name)),
         type: ("text"),
         id: ("name"),
+        name: ("name"),
+        value: ((__VLS_ctx.form.name)),
         ...{ class: ("w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all") },
         required: (true),
     });
@@ -395,10 +472,11 @@ function __VLS_template() {
     __VLS_elementAsFunction(__VLS_intrinsicElements.input)({
         type: ("email"),
         id: ("email"),
+        name: ("email"),
         ...{ class: ("w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all") },
         required: (true),
     });
-    (__VLS_ctx.email);
+    (__VLS_ctx.form.email);
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
         ...{ class: ("mb-6") },
     });
@@ -407,9 +485,9 @@ function __VLS_template() {
         ...{ class: ("block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.textarea, __VLS_intrinsicElements.textarea)({
-        value: ((__VLS_ctx.message)),
         id: ("message"),
-        rows: ("6"),
+        name: ("message"),
+        value: ((__VLS_ctx.form.message)),
         ...{ class: ("w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all") },
         required: (true),
     });
@@ -420,20 +498,20 @@ function __VLS_template() {
         type: ("submit"),
         ...{ class: ("py-3 px-8 bg-green-500 text-white font-semibold rounded-md hover:bg-green-400 transition-all") },
     });
-    if (__VLS_ctx.successMessage) {
+    if (__VLS_ctx.formStatue) {
         __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
-            ...{ class: ("mt-6 text-center text-green-500") },
+            ...{ class: ("mt-6 text-center") },
         });
-        __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
-    }
-    if (__VLS_ctx.errorMessage) {
-        __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
-            ...{ class: ("mt-6 text-center text-red-500") },
+        __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({
+            ...{ class: ("text-xl text-white") },
         });
-        __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
+        (__VLS_ctx.formStatue);
     }
+    __VLS_elementAsFunction(__VLS_intrinsicElements.footer, __VLS_intrinsicElements.footer)({
+        ...{ class: ("bg-gray-900 text-white py-10 mt-20") },
+    });
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
-        ...{ class: ("mt-16 text-center border-t-2 pt-10") },
+        ...{ class: ("max-w-screen-xl mx-auto text-center") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.h3, __VLS_intrinsicElements.h3)({
         ...{ class: ("text-3xl md:text-4xl xl:text-5xl font-semibold text-white mb-6 underline") },
@@ -442,10 +520,10 @@ function __VLS_template() {
         ...{ class: ("text-green-400") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
-        ...{ class: ("flex justify-center gap-10 md:gap-24 flex-wrap mt-10") },
+        ...{ class: ("flex justify-center gap-10 md:gap-16 mt-10") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
-        ...{ class: ("transform transition-transform duration-300 hover:scale-125 text-center") },
+        ...{ class: ("transform transition-transform duration-300 hover:scale-110 text-center") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({
         href: ("mailto:mabmeas12@gmail.com"),
@@ -459,7 +537,7 @@ function __VLS_template() {
         ...{ class: ("text-lg md:text-xl xl:text-2xl text-white mt-2") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
-        ...{ class: ("transform transition-transform duration-300 hover:scale-125 text-center") },
+        ...{ class: ("transform transition-transform duration-300 hover:scale-110 text-center") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({
         href: ("https://www.linkedin.com/in/mab-meas-89a8a3335/"),
@@ -473,7 +551,7 @@ function __VLS_template() {
         ...{ class: ("text-lg md:text-xl xl:text-2xl text-white mt-2") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
-        ...{ class: ("transform transition-transform duration-300 hover:scale-125 text-center") },
+        ...{ class: ("transform transition-transform duration-300 hover:scale-110 text-center") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({
         href: ("https://www.instagram.com/meas_dudu/"),
@@ -487,7 +565,7 @@ function __VLS_template() {
         ...{ class: ("text-lg md:text-xl xl:text-2xl text-white mt-2") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
-        ...{ class: ("transform transition-transform duration-300 hover:scale-125 text-center") },
+        ...{ class: ("transform transition-transform duration-300 hover:scale-110 text-center") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({
         href: ("https://github.com/measmeas1"),
@@ -500,7 +578,21 @@ function __VLS_template() {
     __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({
         ...{ class: ("text-lg md:text-xl xl:text-2xl text-white mt-2") },
     });
-    ['sticky', 'shadow-lg', 'p-1', 'top-0', 'z-50', 'bg-back-ground', 'h-full', 'flex', 'justify-around', 'mt-5', 'text-4xl', 'md:text-6xl', 'font-semibold', 'text-left', 'text-green-500', 'hidden', 'md:flex', 'items-center', 'text-2xl', 'flex', 'space-x-7', 'lg:space-x-11', 'justify-between', 'text-green-500', 'text-green-500', 'text-green-500', 'text-green-500', 'text-green-500', 'container', 'mx-auto', 'flex', 'flex-col-reverse', 'md:flex-row', 'items-center', 'justify-center', 'md:justify-around', 'py-10', 'md:py-20', 'gap-10', 'md:gap-10', 'h-screen', 'flex', 'flex-col', 'items-center', 'text-center', 'md:items-start', 'md:text-left', 'gap-2', 'md:gap-1', 'text-4xl', 'font-bold', 'flex', 'flex-col', 'mb-1', 'items-center', 'md:items-start', 'lg:text-6xl', 'xl:text-7xl', 'text-green-400', 'text-7xl', 'lg:text-8xl', 'xl:text-9xl', 'text-2xl', 'font-medium', 'lg:text-4xl', 'xl-text-5xl', 'mb-4', 'px-5', 'text-xl', 'font-light', 'max-w-2xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'mt-5', 'py-2', 'px-4', 'rounded-md', 'text-white', 'bg-green-500', 'hover:bg-green-400', 'w-56', 'h-57', 'md:w-auto', 'md:h-auto', 'rounded-full', 'border-2', 'border-green-400', 'shadow-[0px_5px_20px_rgba(0,255,0,0.5),inset_0px_3px_10px_rgba(255,255,255,0.7)]', 'py-20', 'text-center', 'text-5xl', 'md:text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'text-center', 'underline', 'pt-5', 'font-bold', 'text-green-400', 'text-xl', 'px-5', 'py-10', 'md:py-20', 'md:px-40', 'md:text-justify', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'text-green-400', 'py-10', 'lg:py-40', 'text-center', 'text-5xl', 'md:text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'bg-gradient-to-b', 'from-green-400', 'to-white', 'text-transparent', 'bg-clip-text', 'font-bold', 'mt-20', 'grid', 'grid-cols-2', 'sm:grid-cols-3', 'lg:grid-cols-4', 'xl:grid-cols-5', 'gap-10', 'text-center', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-110', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-110', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'py-40', 'text-center', 'mb-16', 'text-5xl', 'md:text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'bg-gradient-to-b', 'from-white', 'to-green-400', 'text-transparent', 'bg-clip-text', 'font-bold', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3', 'gap-10', 'px-4', 'bg-slate-800', 'border-2', 'border-green-500', 'rounded-lg', 'shadow-lg', 'transition-all', 'duration-300', 'transform', 'hover:scale-105', 'hover:shadow-2xl', 'hover:border-green-700', 'w-full', 'h-56', 'object-cover', 'rounded-t-lg', 'p-6', 'text-2xl', 'font-semibold', 'text-gray', 'mb-2', 'text-sm', 'text-gray-300', 'mb-4', 'text-xs', 'text-green-500', 'font-medium', 'flex', 'justify-between', 'mt-6', 'bg-green-500', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-600', 'transition-colors', 'duration-300', 'fab', 'fa-github', 'mr-2', 'bg-green-600', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-700', 'transition-colors', 'duration-300', 'fas', 'fa-external-link-alt', 'mr-2', 'py-40', 'text-center', 'mb-16', 'text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'bg-gradient-to-b', 'from-green-500', 'via-slate-300', 'to-green-500', 'text-transparent', 'bg-clip-text', 'font-bold', 'px-5', 'text-xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'mt-5', 'md:mt-10', 'font-light', 'max-w-4xl', 'mx-auto', 'bg-gray-900', 'p-8', 'rounded-lg', 'shadow-xl', 'mb-6', 'block', 'text-xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'font-medium', 'text-white', 'w-full', 'p-4', 'mt-2', 'border', 'border-gray-300', 'rounded-md', 'shadow-sm', 'focus:outline-none', 'focus:ring-2', 'focus:ring-green-500', 'transition-all', 'mb-6', 'block', 'text-xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'font-medium', 'text-white', 'w-full', 'p-4', 'mt-2', 'border', 'border-gray-300', 'rounded-md', 'shadow-sm', 'focus:outline-none', 'focus:ring-2', 'focus:ring-green-500', 'transition-all', 'mb-6', 'block', 'text-xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'font-medium', 'text-white', 'w-full', 'p-4', 'mt-2', 'border', 'border-gray-300', 'rounded-md', 'shadow-sm', 'focus:outline-none', 'focus:ring-2', 'focus:ring-green-500', 'transition-all', 'flex', 'justify-center', 'mt-6', 'py-3', 'px-8', 'bg-green-500', 'text-white', 'font-semibold', 'rounded-md', 'hover:bg-green-400', 'transition-all', 'mt-6', 'text-center', 'text-green-500', 'mt-6', 'text-center', 'text-red-500', 'mt-16', 'text-center', 'border-t-2', 'pt-10', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'font-semibold', 'text-white', 'mb-6', 'underline', 'text-green-400', 'flex', 'justify-center', 'gap-10', 'md:gap-24', 'flex-wrap', 'mt-10', 'transform', 'transition-transform', 'duration-300', 'hover:scale-125', 'text-center', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'text-green-500', 'hover:text-green-400', 'fas', 'fa-envelope', 'text-lg', 'md:text-xl', 'xl:text-2xl', 'text-white', 'mt-2', 'transform', 'transition-transform', 'duration-300', 'hover:scale-125', 'text-center', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'text-green-500', 'hover:text-green-400', 'fab', 'fa-linkedin', 'text-lg', 'md:text-xl', 'xl:text-2xl', 'text-white', 'mt-2', 'transform', 'transition-transform', 'duration-300', 'hover:scale-125', 'text-center', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'text-green-500', 'hover:text-green-400', 'fab', 'fa-instagram', 'text-lg', 'md:text-xl', 'xl:text-2xl', 'text-white', 'mt-2', 'transform', 'transition-transform', 'duration-300', 'hover:scale-125', 'text-center', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'text-green-500', 'hover:text-green-400', 'fab', 'fa-github', 'text-lg', 'md:text-xl', 'xl:text-2xl', 'text-white', 'mt-2',];
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
+        ...{ class: ("mt-10") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({
+        ...{ class: ("text-lg md:text-xl xl:text-2xl font-light") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.img, __VLS_intrinsicElements.img)({
+        src: ("./assets/vue.svg"),
+        ...{ class: ("inline-block w-8 h-8 text-green-500 animate-pulse") },
+    });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.img)({
+        src: ("./assets/tailwind.svg"),
+        ...{ class: ("inline-block w-8 h-8 text-blue-500 animate-bounce") },
+    });
+    ['sticky', 'shadow-lg', 'p-1', 'top-0', 'z-50', 'bg-back-ground', 'h-full', 'flex', 'justify-around', 'mt-5', 'text-4xl', 'md:text-6xl', 'font-semibold', 'text-left', 'text-green-500', 'hidden', 'md:flex', 'items-center', 'text-2xl', 'flex', 'space-x-7', 'lg:space-x-11', 'justify-between', 'text-green-500', 'text-green-500', 'text-green-500', 'text-green-500', 'text-green-500', 'container', 'mx-auto', 'flex', 'flex-col-reverse', 'md:flex-row', 'items-center', 'justify-center', 'md:justify-around', 'py-10', 'md:py-20', 'gap-10', 'md:gap-10', 'h-screen', 'flex', 'flex-col', 'items-center', 'text-center', 'md:items-start', 'md:text-left', 'gap-2', 'md:gap-1', 'text-4xl', 'font-bold', 'flex', 'flex-col', 'mb-1', 'items-center', 'md:items-start', 'lg:text-6xl', 'xl:text-7xl', 'text-green-400', 'text-7xl', 'lg:text-8xl', 'xl:text-9xl', 'text-2xl', 'font-medium', 'lg:text-4xl', 'xl-text-5xl', 'mb-8', 'text-xl', 'font-light', 'max-w-2xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'mt-5', 'py-2', 'px-4', 'rounded-md', 'text-white', 'bg-green-500', 'hover:bg-green-400', 'w-56', 'h-57', 'md:w-auto', 'md:h-auto', 'rounded-full', 'border-2', 'border-green-400', 'shadow-[0px_5px_20px_rgba(0,255,0,0.5),inset_0px_3px_10px_rgba(255,255,255,0.7)]', 'py-20', 'text-center', 'text-5xl', 'md:text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'text-center', 'underline', 'pt-5', 'font-bold', 'text-green-400', 'text-xl', 'px-5', 'py-10', 'md:py-20', 'md:px-40', 'md:text-justify', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'text-green-400', 'py-10', 'lg:py-40', 'text-center', 'text-5xl', 'md:text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'bg-gradient-to-b', 'from-green-400', 'to-white', 'text-transparent', 'bg-clip-text', 'font-bold', 'mt-20', 'grid', 'grid-cols-2', 'sm:grid-cols-3', 'lg:grid-cols-4', 'xl:grid-cols-5', 'gap-10', 'text-center', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-110', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-125', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'flex', 'flex-col', 'items-center', 'skill-box', 'p-4', 'rounded-xl', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-110', 'w-16', 'h-16', 'mb-4', 'text-xl', 'font-semibold', 'py-40', 'text-center', 'mb-16', 'text-5xl', 'md:text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'bg-gradient-to-b', 'from-white', 'to-green-400', 'text-transparent', 'bg-clip-text', 'font-bold', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3', 'gap-10', 'px-4', 'bg-slate-800', 'border-2', 'border-green-500', 'rounded-lg', 'shadow-lg', 'transition-all', 'duration-300', 'transform', 'hover:scale-105', 'hover:shadow-2xl', 'hover:border-green-700', 'w-full', 'h-56', 'object-cover', 'rounded-t-lg', 'p-6', 'text-2xl', 'font-semibold', 'text-gray', 'mb-2', 'text-sm', 'text-gray-300', 'mb-4', 'text-xs', 'text-green-500', 'font-medium', 'flex', 'justify-between', 'mt-6', 'bg-green-500', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-600', 'transition-colors', 'duration-300', 'fab', 'fa-github', 'mr-2', 'bg-green-600', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-700', 'transition-colors', 'duration-300', 'fas', 'fa-external-link-alt', 'mr-2', 'bg-slate-800', 'border-2', 'border-green-500', 'rounded-lg', 'shadow-lg', 'transition-all', 'duration-300', 'transform', 'hover:scale-105', 'hover:shadow-2xl', 'hover:border-green-700', 'w-full', 'h-56', 'object-cover', 'rounded-t-lg', 'p-6', 'text-2xl', 'font-semibold', 'text-gray', 'mb-2', 'text-sm', 'text-gray-300', 'mb-4', 'text-xs', 'text-green-500', 'font-medium', 'flex', 'justify-between', 'mt-6', 'bg-green-500', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-600', 'transition-colors', 'duration-300', 'fab', 'fa-github', 'mr-2', 'bg-green-600', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-700', 'transition-colors', 'duration-300', 'fas', 'fa-external-link-alt', 'mr-2', 'py-40', 'text-center', 'mb-16', 'text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'bg-gradient-to-b', 'from-green-500', 'via-slate-300', 'to-green-500', 'text-transparent', 'bg-clip-text', 'font-bold', 'px-5', 'text-xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'mt-5', 'md:mt-10', 'font-light', 'max-w-4xl', 'mx-auto', 'bg-gray-900', 'p-8', 'rounded-lg', 'shadow-xl', 'mb-6', 'block', 'text-xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'font-medium', 'text-white', 'w-full', 'p-4', 'mt-2', 'border', 'border-gray-300', 'rounded-md', 'shadow-sm', 'focus:outline-none', 'focus:ring-2', 'focus:ring-green-500', 'transition-all', 'mb-6', 'block', 'text-xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'font-medium', 'text-white', 'w-full', 'p-4', 'mt-2', 'border', 'border-gray-300', 'rounded-md', 'shadow-sm', 'focus:outline-none', 'focus:ring-2', 'focus:ring-green-500', 'transition-all', 'mb-6', 'block', 'text-xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'font-medium', 'text-white', 'w-full', 'p-4', 'mt-2', 'border', 'border-gray-300', 'rounded-md', 'shadow-sm', 'focus:outline-none', 'focus:ring-2', 'focus:ring-green-500', 'transition-all', 'flex', 'justify-center', 'mt-6', 'py-3', 'px-8', 'bg-green-500', 'text-white', 'font-semibold', 'rounded-md', 'hover:bg-green-400', 'transition-all', 'mt-6', 'text-center', 'text-xl', 'text-white', 'bg-gray-900', 'text-white', 'py-10', 'mt-20', 'max-w-screen-xl', 'mx-auto', 'text-center', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'font-semibold', 'text-white', 'mb-6', 'underline', 'text-green-400', 'flex', 'justify-center', 'gap-10', 'md:gap-16', 'mt-10', 'transform', 'transition-transform', 'duration-300', 'hover:scale-110', 'text-center', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'text-green-500', 'hover:text-green-400', 'fas', 'fa-envelope', 'text-lg', 'md:text-xl', 'xl:text-2xl', 'text-white', 'mt-2', 'transform', 'transition-transform', 'duration-300', 'hover:scale-110', 'text-center', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'text-green-500', 'hover:text-green-400', 'fab', 'fa-linkedin', 'text-lg', 'md:text-xl', 'xl:text-2xl', 'text-white', 'mt-2', 'transform', 'transition-transform', 'duration-300', 'hover:scale-110', 'text-center', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'text-green-500', 'hover:text-green-400', 'fab', 'fa-instagram', 'text-lg', 'md:text-xl', 'xl:text-2xl', 'text-white', 'mt-2', 'transform', 'transition-transform', 'duration-300', 'hover:scale-110', 'text-center', 'text-3xl', 'md:text-4xl', 'xl:text-5xl', 'text-green-500', 'hover:text-green-400', 'fab', 'fa-github', 'text-lg', 'md:text-xl', 'xl:text-2xl', 'text-white', 'mt-2', 'mt-10', 'text-lg', 'md:text-xl', 'xl:text-2xl', 'font-light', 'inline-block', 'w-8', 'h-8', 'text-green-500', 'animate-pulse', 'inline-block', 'w-8', 'h-8', 'text-blue-500', 'animate-bounce',];
     var __VLS_slots;
     var $slots;
     let __VLS_inheritedAttrs;
