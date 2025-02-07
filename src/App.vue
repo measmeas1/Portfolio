@@ -188,7 +188,7 @@
   </section>
 
   <section id="contact" class="py-40 ">
-    <h2 class="text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-500 via-slate-300 to-green-500 text-transparent bg-clip-text font-bold">Contact</h2>
+    <h2 class="text-center text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-500 via-slate-300 to-green-500 text-transparent bg-clip-text font-bold">Contact</h2>
     <div class="text-center mb-16">
         <p class="px-5 text-xl md:text-1xl lg:text-2xl xl:text-3xl mt-5 md:mt-10 font-light">I would love to hear from you! Please leave a message below.</p>
       </div>
