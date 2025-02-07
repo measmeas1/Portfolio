@@ -195,16 +195,17 @@
 
     <!-- Contact Form -->
   <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-    <form name="contact" data-netlify="true">
+    <form name="contact" data-netlify="true" method="POST" @submit.prevent="submitForm">
       <input type="hidden" name="form-name" value="contact" />
 
       <!-- Name Field -->
       <div class="mb-6">
-        <label class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name
+        <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name
           <input
           type="text"
           id="name"
           name="name"
+          v-model="form.name"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
         />
@@ -213,11 +214,12 @@
 
       <!-- Email Field -->
       <div class="mb-6">
-        <label class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email
+        <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email
           <input
           type="email"
           id="email"
           name="email"
+          v-model="form.email"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
         />
@@ -226,11 +228,11 @@
 
       <!-- Message Field -->
       <div class="mb-6">
-        <label class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message
+        <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message
           <textarea
           id="message"
           name="message"
-          rows="6"
+          v-model="form.message"
           class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
           required
         ></textarea>
@@ -248,6 +250,10 @@
         </button>
       </div>
     </form>
+  </div>
+
+  <div v-if="formStatue">
+    <p>{{ formStatue }}</p>
   </div>
 
      <!-- Social Media Links -->
@@ -301,9 +307,41 @@ export default {
   components: { Mobile },
   data() {
     return {
+      form: {
+        name: '',
+        email: '',
+        message: '',
+      },
+      formStatue: '',
+
       isMobile: window.innerWidth < 768,
       activeSection: "home",  
     };
+  },
+  methods: {
+    submitForm(){
+      const formData = new FormData();
+      formData.append("name", this.form.name);
+      formData.append("email", this.form.email);
+      formData.append("message", this.form.message);
+    
+      fetch("/", {
+        method: "POST",
+        body: formData,
+      })
+      .then(() => {
+        this.formStatue = "Thank You for your message!";
+        this.resetForm();
+      })
+      .catch((error) => {
+        this.formStatue = "Error sending message. Please try again later.";
+      });
+    },
+    resetForm(){
+      this.form.name = '';
+      this.form.email = '';
+      this.form.message = '';
+    }
   },
 
   mounted() {
