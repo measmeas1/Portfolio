@@ -188,76 +188,70 @@
   </section>
 
   <section id="contact" class="py-40 ">
+    <h2 class="text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-500 via-slate-300 to-green-500 text-transparent bg-clip-text font-bold">Contact</h2>
     <div class="text-center mb-16">
-      <h2 class="text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-500 via-slate-300 to-green-500 text-transparent bg-clip-text font-bold">Contact</h2>
-      <p class="px-5 text-xl md:text-1xl lg:text-2xl xl:text-3xl mt-5 md:mt-10 font-light">I would love to hear from you! Please leave a message below.</p>
+        <p class="px-5 text-xl md:text-1xl lg:text-2xl xl:text-3xl mt-5 md:mt-10 font-light">I would love to hear from you! Please leave a message below.</p>
+      </div>
+    
+      <!-- Contact Form -->
+    <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
+      <form name="contact" data-netlify="true" method="POST">
+        <input type="hidden" name="form-name" value="contact" />
+      
+        <!-- Name Field -->
+        <div class="mb-6">
+          <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name
+            <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+            required
+          />
+        </label>
+        </div>
+      
+        <!-- Email Field -->
+        <div class="mb-6">
+          <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email
+            <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+            required
+          />
+          </label>
+        </div>
+      
+        <!-- Message Field -->
+        <div class="mb-6">
+          <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message
+            <textarea
+            id="message"
+            name="message"
+            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+            required
+          ></textarea>
+          </label>
+        
+        </div>
+      
+        <!-- Submit Button -->
+        <div class="flex justify-center mt-6">
+          <button
+            type="submit"
+            class="py-3 px-8 bg-green-500 text-white font-semibold rounded-md hover:bg-green-400 transition-all"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
     </div>
-
-    <!-- Contact Form -->
-  <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-    <form name="contact" data-netlify="true" method="POST" @submit.prevent="submitForm">
-      <input type="hidden" name="form-name" value="contact" />
-
-      <!-- Name Field -->
-      <div class="mb-6">
-        <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name
-          <input
-          type="text"
-          id="name"
-          name="name"
-          v-model="form.name"
-          class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-          required
-        />
-      </label>
-      </div>
-
-      <!-- Email Field -->
-      <div class="mb-6">
-        <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email
-          <input
-          type="email"
-          id="email"
-          name="email"
-          v-model="form.email"
-          class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-          required
-        />
-        </label>
-      </div>
-
-      <!-- Message Field -->
-      <div class="mb-6">
-        <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message
-          <textarea
-          id="message"
-          name="message"
-          v-model="form.message"
-          class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-          required
-        ></textarea>
-        </label>
-
-      </div>
-
-      <!-- Submit Button -->
-      <div class="flex justify-center mt-6">
-        <button
-          type="submit"
-          class="py-3 px-8 bg-green-500 text-white font-semibold rounded-md hover:bg-green-400 transition-all"
-        >
-          Send Message
-        </button>
-      </div>
-    </form>
-  </div>
-
-  <div v-if="formStatue" class="mt-6 text-center">
-    <p class="text-xl text-white">{{ formStatue }}</p>
-  </div>
-
-     <!-- Social Media Links -->
   
+    <div v-if="formStatue" class="mt-6 text-center">
+      <p class="text-xl text-white">Thank you for your message!</p>
+    </div>
   </section>
 
   <footer class="bg-gray-900 text-white py-10 mt-20">
@@ -326,41 +320,9 @@ export default {
   components: { Mobile },
   data() {
     return {
-      form: {
-        name: '',
-        email: '',
-        message: '',
-      },
-      formStatue: '',
-
       isMobile: window.innerWidth < 768,
       activeSection: "home",  
     };
-  },
-  methods: {
-    submitForm(){
-      const formData = new FormData();
-      formData.append("name", this.form.name);
-      formData.append("email", this.form.email);
-      formData.append("message", this.form.message);
-    
-      fetch("/", {
-        method: "POST",
-        body: formData,
-      })
-      .then(() => {
-        this.formStatue = "Thank You for your message!";
-        this.resetForm();
-      })
-      .catch((error) => {
-        this.formStatue = "Error sending message. Please try again later.";
-      });
-    },
-    resetForm(){
-      this.form.name = '';
-      this.form.email = '';
-      this.form.message = '';
-    }
   },
 
   mounted() {
