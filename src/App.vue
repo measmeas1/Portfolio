@@ -195,7 +195,7 @@
 
     <!-- Contact Form -->
   <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-    <form name="contact" netlify>
+    <form name="contact" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
 
       <!-- Name Field -->
