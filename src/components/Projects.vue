@@ -10,7 +10,7 @@
         <div class="p-6">
           <h3 class="text-2xl font-semibold text-gray mb-2">{{ project.name }}</h3>
           <p class="text-sm text-gray-300 mb-4">{{ project.description }}</p>
-          <p class="text-xs text-green-500 font-medium">{{ project.technologies }}</p>
+          <p class="text-xs text-green-400 font-medium">{{ project.technologies }}</p>
           <div class="flex justify-between mt-6">
             <a :href="project.github" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-800 transition-colors duration-300">
               <i class="fab fa-github mr-2"></i> GitHub
@@ -20,6 +20,8 @@
             </a>
           </div>
         </div>
+          <!-- Glow Effect -->
+          <div class="absolute inset-0 bg-green-700 opacity-10 rounded-2xl blur-2xl"></div>
       </div>
     </div>
   </section>
