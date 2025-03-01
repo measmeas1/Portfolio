@@ -1,323 +1,34 @@
 <template>
-  <header class="sticky shadow-lg p-1 top-0 z-50 bg-back-ground h-full">
-    <div class="flex justify-around mt-5 ">
-      <a href="">
-        <h1 class="text-4xl md:text-6xl font-semibold text-left">Meas<span class="text-green-500 ">.</span></h1>
-      </a>
-      <Mobile v-if="isMobile"/>
-      <nav class="hidden md:flex items-center text-2xl">
-        <ul class="flex space-x-7 lg:space-x-11 justify-between">
-          <li>
-            <a href="#home" :class="{ 'text-green-500': activeSection === 'home' }">Home</a>
-          </li>
-          <li>
-            <a href="#about" :class="{ 'text-green-500': activeSection === 'about' }">About</a>
-          </li>
-          <li>
-            <a href="#skills" :class="{ 'text-green-500': activeSection === 'skills' }" >Skills</a>
-          </li>
-          <li>
-            <a href="#projects" :class="{ 'text-green-500': activeSection === 'projects' }" >Projects</a>
-          </li>
-          <li>
-            <a href="#contact" :class="{ 'text-green-500': activeSection === 'contact' }">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <Header :isMobile="isMobile" :activeSection="activeSection" />
 
-  <section id="home">
-    <div class="container mx-auto flex flex-col-reverse md:flex-row items-center justify-center md:justify-around py-10 md:py-20 gap-10 md:gap-10 h-screen">
-      <!-- Text on the left -->
-      <div class="flex flex-col items-center text-center md:items-start md:text-left gap-2 md:gap-1">
-        <h1 class="text-4xl font-bold flex flex-col mb-1 items-center md:items-start lg:text-6xl xl:text-7xl">Hello, I'm <span class="text-green-400 text-7xl lg:text-8xl xl:text-9xl">Mab Meas</span></h1>
-        <h6 class="text-2xl font-medium lg:text-4xl xl-text-5xl mb-8">Software Developer</h6>
-        
-        <p class="text-xl font-light max-w-2xl md:text-1xl lg:text-2xl xl:text-3xl">Welcome to my personal portfolio. I'm a software developer passionate about building interactive, eager to learn, grow, and contribute to real-world projects.</p>
-        <button class="mt-5 py-2 px-4 rounded-md text-white bg-green-500 hover:bg-green-400">Get In Touch</button>
-      </div>
-      <!-- Image on the right -->
-      <div>
-        <img src="./assets/image2.png" alt="Meas" class="w-56 h-57 md:w-auto md:h-auto rounded-full border-2 border-green-400 shadow-[0px_5px_20px_rgba(0,255,0,0.5),inset_0px_3px_10px_rgba(255,255,255,0.7)]">
-      </div>
-    </div>
-  </section>
+  <Home />
 
-  <section id="about" class="py-20">
-    <div class="text-center">
-      <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-center underline pt-5 font-bold">About <span class="text-green-400">Me</span></h2>
-      <p class="text-xl px-5 py-10 md:py-20 md:px-40 md:text-justify md:text-1xl lg:text-2xl xl:text-3xl">I’m <span class="text-green-400">Mab Meas</span>, a dedicated software development student at Norton University. I have a solid grasp of core programming languages like Java, JavaScript, Node.js and Python, along with experience in web development using HTML, CSS, and frameworks such as Vue and Tailwind. I’m also gaining experience with mobile development in Flutter and working with databases using MySQL.    
-        
-        I’m always eager to learn more and improve my skills, and I’m looking for an internship to further expand my knowledge while contributing to meaningful projects.   
-      </p>
-    </div>
-  </section>
+  <About />
 
-  <section id="skills" class="py-10 lg:py-40">
-  <div class="text-center">
-    <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-400 to-white text-transparent bg-clip-text font-bold">Skills</h2>
-  </div>
+  <Skills />
 
-  <!-- Skill Icons Grid -->
-  <div class="mt-20 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 text-center">
-    <!-- Skill 1: HTML -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125">
-        <img src="./assets/html5.svg" alt="HTML" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">HTML</span>
-    </div>
+  <Projects />
 
-    <!-- Skill 2: CSS -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125">
-        <img src="./assets/css3.svg" alt="CSS" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">CSS</span>
-    </div>
+  <Contact /> 
 
-    <!-- Skill 3: JavaScript -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-110">
-        <img src="./assets/javascript.svg" alt="JavaScript" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">JavaScript</span>
-    </div>
-
-    <!-- Skill 4: Vue -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125">
-        <img src="./assets/vue.svg" alt="Vue.js" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">Vue.js</span>
-    </div>
-
-    <!-- Skill 5: Tailwind CSS -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125">
-        <img src="./assets/tailwind.svg" alt="Tailwind CSS" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">Tailwind CSS</span>
-    </div>
-
-    <!-- Skill 6: Java -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125">
-        <img src="./assets/java.svg" alt="Java" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">Java</span>
-    </div>
-
-    <!-- Skill 7: Node.js -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125">
-        <img src="./assets/node.svg" alt="Node.js" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">Node.js</span>
-    </div>
-
-    <!-- Skill 8: MySQL -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125">
-        <img src="./assets/mysql.svg" alt="MySQL" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">MySQL</span>
-    </div>
-
-    <!-- Skill 9: PostgreSQL -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125">
-        <img src="./assets/postgresql.svg" alt="PostgreSQL" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">PostgreSQL</span>
-    </div>
-
-    <!-- Skill 10: GitHub -->
-    <div class="flex flex-col items-center">
-      <div class="skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-110">
-        <img src="./assets/github.svg" alt="GitHub" class="w-16 h-16 mb-4">
-      </div>
-      <span class="text-xl font-semibold">GitHub</span>
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="py-40">
-    <div class="text-center mb-16">
-      <h2 class="text-5xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-white to-green-400 text-transparent bg-clip-text font-bold">Projects</h2>
-    </div>
-    <!-- Project Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
-      <!-- Project 1 -->
-
-      <div class="bg-slate-800 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
-      <img src="./assets/logo_2.jpg" alt="Project 3" class="w-full h-56 object-cover rounded-t-lg" />
-      <div class="p-6">
-        <h3 class="text-2xl font-semibold text-gray mb-2">Project 1</h3>
-        <p class="text-sm text-gray-300 mb-4">An e-commerce platform for buying and selling products online.</p>
-        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Stripe API</p>
-        <div class="flex justify-between mt-6">
-          <a href="https://github.com/yourusername/project3" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
-            <i class="fab fa-github mr-2"></i> GitHub
-          </a>
-          <a href="https://yourdemo.com/project3" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
-            <i class="fas fa-external-link-alt mr-2"></i> Demo
-          </a>
-        </div>
-      </div>
-      </div>
-
-      <div class="bg-slate-800 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
-      <img src="./assets/logo_2.jpg" alt="Project 3" class="w-full h-56 object-cover rounded-t-lg" />
-      <div class="p-6">
-        <h3 class="text-2xl font-semibold text-gray mb-2">Project 1</h3>
-        <p class="text-sm text-gray-300 mb-4">An e-commerce platform for buying and selling products online.</p>
-        <p class="text-xs text-green-500 font-medium">Vue.js | Tailwind CSS | Stripe API</p>
-        <div class="flex justify-between mt-6">
-          <a href="https://github.com/yourusername/project3" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 transition-colors duration-300">
-            <i class="fab fa-github mr-2"></i> GitHub
-          </a>
-          <a href="https://yourdemo.com/project3" target="_blank" class="bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300">
-            <i class="fas fa-external-link-alt mr-2"></i> Demo
-          </a>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="py-40 ">
-    <h2 class="text-center text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-b from-green-500 via-slate-300 to-green-500 text-transparent bg-clip-text font-bold">Contact</h2>
-    <div class="text-center mb-16">
-        <p class="px-5 text-xl md:text-1xl lg:text-2xl xl:text-3xl mt-5 md:mt-10 font-light">I would love to hear from you! Please leave a message below.</p>
-      </div>
-    
-      <!-- Contact Form -->
-    <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
-      <form name="contact" data-netlify="true" method="POST">
-        <input type="hidden" name="form-name" value="contact" />
-      
-        <!-- Name Field -->
-        <div class="mb-6">
-          <label for="name" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Name
-            <input
-            type="text"
-            id="name"
-            name="name"
-            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-            required
-          />
-        </label>
-        </div>
-      
-        <!-- Email Field -->
-        <div class="mb-6">
-          <label for="email" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Email
-            <input
-            type="email"
-            id="email"
-            name="email"
-            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-            required
-          />
-          </label>
-        </div>
-      
-        <!-- Message Field -->
-        <div class="mb-6">
-          <label for="message" class="block text-xl md:text-1xl lg:text-2xl xl:text-3xl font-medium text-white">Your Message
-            <textarea
-            id="message"
-            name="message"
-            class="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-            required
-          ></textarea>
-          </label>
-        
-        </div>
-      
-        <!-- Submit Button -->
-        <div class="flex justify-center mt-6">
-          <button
-            type="submit"
-            class="py-3 px-8 bg-green-500 text-white font-semibold rounded-md hover:bg-green-400 transition-all"
-          >
-            Send Message
-          </button>
-        </div>
-      </form>
-    </div>
+  <Footer />
   
-    <div v-if="formStatue" class="mt-6 text-center">
-      <p class="text-xl text-white">Thank you for your message!</p>
-    </div>
-  </section>
-
-  <footer class="bg-gray-900 text-white py-10 mt-20">
-    <div class="max-w-screen-xl mx-auto text-center">
-      <h3 class="text-3xl md:text-4xl xl:text-5xl font-semibold text-white mb-6 underline">Connect <span class="text-green-400">with</span> Me</h3>
-      
-      <!-- Social Media Icons -->
-      <div class="flex justify-center gap-10 md:gap-16 mt-10">
-        <!-- Email -->
-        <div class="transform transition-transform duration-300 hover:scale-110 text-center">
-          <a href="mailto:mabmeas12@gmail.com" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">Email</p>
-        </div>
-
-        <!-- LinkedIn -->
-        <div class="transform transition-transform duration-300 hover:scale-110 text-center">
-          <a href="https://www.linkedin.com/in/mab-meas-89a8a3335/" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">LinkedIn</p>
-        </div>
-
-        <!-- Instagram -->
-        <div class="transform transition-transform duration-300 hover:scale-110 text-center">
-          <a href="https://www.instagram.com/meas_dudu/" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">Instagram</p>
-        </div>
-
-        <!-- GitHub -->
-        <div class="transform transition-transform duration-300 hover:scale-110 text-center">
-          <a href="https://github.com/measmeas1" target="_blank" class="text-3xl md:text-4xl xl:text-5xl text-green-500 hover:text-green-400">
-            <i class="fab fa-github"></i>
-          </a>
-          <p class="text-lg md:text-xl xl:text-2xl text-white mt-2">GitHub</p>
-        </div>
-      </div>
-
-      <!-- Footer Text -->
-      <!-- Footer Text with SVG Icons -->
-<div class="mt-10">
-  <p class="text-lg md:text-xl xl:text-2xl font-light">
-    Made with 
-    <!-- Vue.js SVG Icon with Continuous Animation -->
-    <img src="./assets/vue.svg" class="inline-block w-8 h-8 text-green-500 animate-pulse">
-    and
-    <!-- Tailwind CSS SVG Icon with Continuous Animation -->
-    <img src="./assets/tailwind.svg" class="inline-block w-8 h-8 text-blue-500 animate-bounce"/>
-    CSS. All Rights Reserved © 2025
-  </p>
-</div>
-
-    </div>
-  </footer>
-
 </template>
 
 <script>
-import Mobile from "./components/Mobile.vue";
+import Header from "./components/Header.vue";
+import Home from "./components/Home.vue";
+import About from "./components/About.vue";
+import Skills from "./components/Skills.vue";
+import Projects from "./components/Projects.vue";
+import Contact from "./components/Contact.vue";
+import Footer from "./components/Footer.vue";
+
+
 
 export default {
   name: "App",
-  components: { Mobile },
+  components: { Header, Home, About, Skills, Projects, Contact, Footer },
   data() {
     return {
       isMobile: window.innerWidth < 768,
@@ -325,90 +36,78 @@ export default {
     };
   },
 
-  mounted() {
-    // Watch for window resize
-    window.addEventListener("resize", () => {
+  methods: {
+    updateMobileView() {
       this.isMobile = window.innerWidth < 768;
-    });
+    },
+    observeSections() {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.activeSection = entry.target.id;
+            }
+          });
+        },
+        { rootMargin: "-50% 0px" }
+      );
 
-    // Use Intersection Observer to watch sections as they come into view
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.activeSection = entry.target.id;  // Set the active section to the current section
-          }
-        });
-      },
-      {
-        rootMargin: "-50% 0px", // This makes it trigger when the section is at the center of the screen
-      }
-    );
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+    },
+  },
 
-    // Observe the sections
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+  mounted() {
+    window.addEventListener("resize", this.updateMobileView);
+    this.observeSections();
   },
   beforeDestroy() {
-    window.removeEventListener("resize", () => {
-      this.isMobile = window.innerWidth < 768;
-    });
+    window.removeEventListener("resize", this.updateMobileView);
   },
 };
 </script>
 
 <style scoped>
-a {
-  text-decoration: none;
-  color: inherit; /* Ensure it inherits the green color */
-  position: relative;
-  padding-bottom: 2px; 
-}
 
-a:hover{
-  color: #48bb78;
-}
-a:hover::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #48bb78; /* green-400 underline color */
-  animation: underline 0.1s ease-in-out;
-}
 
-a.text-green-500 {
-  color: #48bb78; /* Green color when active */
-}
-
-@keyframes underline {
-  0% { width: 0; }
-  100% { width: 100%; }
-}
-
-footer {
-  background-color: #1a202c;
-  color: #fff;
-  padding-top: 20px;
-}
-
-footer .text-green-500 {
-  color: #48bb78; /* Green color for hover */
-}
-
-footer .transform:hover {
-  transform: scale(1.15);
-}
-
-footer i {
-  transition: transform 0.3s ease;
-}
-
-footer i:hover {
-  transform: translateY(-5px);
-}
 </style>
+
+
+<!-- <template>
+    <template>
+    <section id="about" class="py-20 px-5">
+      <div class="text-center max-w-8xl mx-auto">
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-extrabold underline decoration-green-400 mb-10">
+          About <span class="text-green-400">Me</span>
+        </h2>
+        
+        <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10">
+          <div class="relative group flex justify-center lg:flex-none">
+            <img src="../assets/program.png" alt="photo"
+            class="rounded-full h-56 w-56 md:h-72 md:w-72 lg:h-96 lg:w-96 xl:h-[28rem] xl:w-[28rem] object-cover shadow-2xl transition-transform transform group-hover:scale-110">
+            <div class="absolute inset-0 bg-black bg-opacity-20 rounded-full group-hover:bg-opacity-50 transition-all"></div>
+          </div>
+          
+          <div class="max-w-3xl text-center lg:text-left bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
+            <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed">
+              I’m <span class="text-green-400 font-semibold">Mab Meas</span>, a dedicated software development student at Norton University.
+              I have a solid grasp of core programming languages like <span class="font-semibold text-green-300">Java, JavaScript, Node.js,</span> and <span class="font-semibold text-green-300">Python</span>, along with experience in web development using <span class="font-semibold text-green-300">HTML, CSS,</span> and frameworks such as <span class="font-semibold text-green-300">Vue</span> and <span class="font-semibold text-green-300">Tailwind</span>.
+              I’m also gaining experience with mobile development in <span class="font-semibold text-green-300">Flutter</span> and working with databases using <span class="font-semibold text-green-300">MySQL</span>.
+            </p>
+            
+            <p class="mt-5 text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed">
+              I’m always eager to learn more and improve my skills, and I’m currently looking for an <span class="font-semibold text-green-400">internship</span>
+              to further expand my knowledge while contributing to meaningful projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+<script>
+export default {
+  name: "About",
+};
+</script> -->
