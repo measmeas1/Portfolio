@@ -18,8 +18,10 @@ module.exports = {
         sm: '4px', // Blur effect for mobile menu backdrop
       },
       fontFamily: {
-        sans: ['"Segoe UI"', 'Arial', 'sans-serif'],  // Smooth, modern font
-        mono: ['JetBrains Mono', 'monospace'], // Monospaced font for code snippets
+        sans: ['"Segoe UI"', 'Arial', 'sans-serif'],  
+        mono: ['JetBrains Mono', 'monospace'], 
+        sigmar: ["Sigmar", "sans-serif"],
+      
       },
       screens: {
         sm: '640px', // Mobile screen size breakpoint
