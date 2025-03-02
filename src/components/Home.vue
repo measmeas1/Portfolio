@@ -42,7 +42,7 @@
 
 
 <script>
-import { Motion } from "@motionone/vue";
+  import { Motion } from "vue-motion-helper";
 
 export default {
   name: "Home",
