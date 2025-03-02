@@ -22,10 +22,9 @@
           </Motion>
           
           <a 
-            v-bind="{ whileHover: { scale: 1.1 } }"
-            :href="'/meas.pdf'"
-            download 
-            class="py-4 px-6 text-lg font-semibold rounded-lg text-white bg-blue-800 hover:bg-blue-600 transition duration-300 ">
+            href="/meas.pdf"
+            download="meas.pdf"
+            class="py-4 px-6 text-lg font-semibold rounded-lg text-white bg-blue-800 hover:bg-blue-600 transition duration-300">
             Download CV
           </a>
         </div>

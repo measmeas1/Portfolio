@@ -78,10 +78,9 @@ function __VLS_template() {
     __VLS_11.slots.default;
     var __VLS_11;
     __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({
-        ...({ whileHover: { scale: 1.1 } }),
-        href: (('/meas.pdf')),
-        download: (true),
-        ...{ class: ("py-4 px-6 text-lg font-semibold rounded-lg text-white bg-blue-800 hover:bg-blue-600 transition duration-300 ") },
+        href: ("/meas.pdf"),
+        download: ("meas.pdf"),
+        ...{ class: ("py-4 px-6 text-lg font-semibold rounded-lg text-white bg-blue-800 hover:bg-blue-600 transition duration-300") },
     });
     __VLS_5.slots.default;
     var __VLS_5;
