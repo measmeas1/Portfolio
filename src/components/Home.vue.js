@@ -1,4 +1,4 @@
-import { Motion } from "vue-motion-helper";
+import { Motion } from '@motionone/vue';
 export default (await import('vue')).defineComponent({
     name: "Home",
     components: { Motion },
