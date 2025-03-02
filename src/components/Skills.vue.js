@@ -47,7 +47,7 @@ function __VLS_template() {
             ...{ class: ("skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125") },
         });
         __VLS_elementAsFunction(__VLS_intrinsicElements.img, __VLS_intrinsicElements.img)({
-            src: ((`src/assets/${skill.icon}`)),
+            src: ((`/assets/${skill.icon}`)),
             alt: ((skill.name)),
             ...{ class: ("w-16 h-16 mb-4") },
         });
