@@ -21,7 +21,7 @@ module.exports = {
         sans: ['"Segoe UI"', 'Arial', 'sans-serif'],  
         mono: ['JetBrains Mono', 'monospace'], 
         sigmar: ["Sigmar", "sans-serif"],
-      
+        lilita: ["Lilita One", "sans-serif"] 
       },
       screens: {
         sm: '640px', // Mobile screen size breakpoint

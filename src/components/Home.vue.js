@@ -48,7 +48,7 @@ function __VLS_template() {
         ...{ class: ("text-4xl font-bold flex flex-col mb-1 items-center md:items-start lg:text-6xl xl:text-7xl") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.span, __VLS_intrinsicElements.span)({
-        ...{ class: ("text-green-400 text-7xl lg:text-8xl xl:text-9xl font-sigmar") },
+        ...{ class: ("text-green-400 text-7xl lg:text-8xl xl:text-9xl font-lilita") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.h6, __VLS_intrinsicElements.h6)({
         ...{ class: ("text-2xl font-medium lg:text-4xl xl-text-5xl mb-8") },
@@ -82,7 +82,7 @@ function __VLS_template() {
     var __VLS_11;
     __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({
         ...({ whileHover: { scale: 1.1 } }),
-        href: (('/Meas.pdf')),
+        href: (('/meas.pdf')),
         download: (true),
         ...{ class: ("py-4 px-6 text-lg font-semibold rounded-lg text-white bg-blue-800 hover:bg-blue-600 transition duration-300 ") },
     });
@@ -104,7 +104,7 @@ function __VLS_template() {
     });
     __VLS_19.slots.default;
     var __VLS_19;
-    ['relative', 'container', 'mx-auto', 'flex', 'flex-col-reverse', 'md:flex-row', 'items-center', 'justify-center', 'md:justify-around', 'py-10', 'md:py-20', 'gap-10', 'md:gap-10', 'h-screen', 'flex', 'flex-col', 'items-center', 'text-center', 'md:items-start', 'md:text-left', 'gap-2', 'md:gap-1', 'text-4xl', 'font-bold', 'flex', 'flex-col', 'mb-1', 'items-center', 'md:items-start', 'lg:text-6xl', 'xl:text-7xl', 'text-green-400', 'text-7xl', 'lg:text-8xl', 'xl:text-9xl', 'font-sigmar', 'text-2xl', 'font-medium', 'lg:text-4xl', 'xl-text-5xl', 'mb-8', 'text-xl', 'p-3', 'font-light', 'max-w-2xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'flex', 'flex-row', 'sm:flex-row', 'gap-4', 'mt-6', 'cursor-pointer', 'py-4', 'px-6', 'text-lg', 'font-semibold', 'rounded-lg', 'text-white', 'bg-green-500', 'hover:bg-green-700', 'transition', 'duration-300', 'py-4', 'px-6', 'text-lg', 'font-semibold', 'rounded-lg', 'text-white', 'bg-blue-800', 'hover:bg-blue-600', 'transition', 'duration-300', 'w-56', 'h-57', 'md:w-auto', 'md:h-auto', 'rounded-full', 'border-4', 'border-green-400', 'shadow-[0px_5px_60px_rgba(0,255,0,0.4),inset_0px_4px_20px_rgba(255,255,255,0.7)]',];
+    ['relative', 'container', 'mx-auto', 'flex', 'flex-col-reverse', 'md:flex-row', 'items-center', 'justify-center', 'md:justify-around', 'py-10', 'md:py-20', 'gap-10', 'md:gap-10', 'h-screen', 'flex', 'flex-col', 'items-center', 'text-center', 'md:items-start', 'md:text-left', 'gap-2', 'md:gap-1', 'text-4xl', 'font-bold', 'flex', 'flex-col', 'mb-1', 'items-center', 'md:items-start', 'lg:text-6xl', 'xl:text-7xl', 'text-green-400', 'text-7xl', 'lg:text-8xl', 'xl:text-9xl', 'font-lilita', 'text-2xl', 'font-medium', 'lg:text-4xl', 'xl-text-5xl', 'mb-8', 'text-xl', 'p-3', 'font-light', 'max-w-2xl', 'md:text-1xl', 'lg:text-2xl', 'xl:text-3xl', 'flex', 'flex-row', 'sm:flex-row', 'gap-4', 'mt-6', 'cursor-pointer', 'py-4', 'px-6', 'text-lg', 'font-semibold', 'rounded-lg', 'text-white', 'bg-green-500', 'hover:bg-green-700', 'transition', 'duration-300', 'py-4', 'px-6', 'text-lg', 'font-semibold', 'rounded-lg', 'text-white', 'bg-blue-800', 'hover:bg-blue-600', 'transition', 'duration-300', 'w-56', 'h-57', 'md:w-auto', 'md:h-auto', 'rounded-full', 'border-4', 'border-green-400', 'shadow-[0px_5px_60px_rgba(0,255,0,0.4),inset_0px_4px_20px_rgba(255,255,255,0.7)]',];
     var __VLS_slots;
     var $slots;
     let __VLS_inheritedAttrs;

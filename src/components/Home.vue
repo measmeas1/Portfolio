@@ -5,7 +5,7 @@
       <Motion v-bind="fadeInLeft" 
         class="flex flex-col items-center text-center md:items-start md:text-left gap-2 md:gap-1">
         <h1 class="text-4xl font-bold flex flex-col mb-1 items-center md:items-start lg:text-6xl xl:text-7xl">
-          Hello, I'm <span class="text-green-400 text-7xl lg:text-8xl xl:text-9xl font-sigmar">Mab Meas</span>
+          Hello, I'm <span class="text-green-400 text-7xl lg:text-8xl xl:text-9xl font-lilita">Mab Meas</span>
         </h1>
         <h6 class="text-2xl font-medium lg:text-4xl xl-text-5xl mb-8">Software Developer</h6>
         
@@ -23,7 +23,7 @@
           
           <a 
             v-bind="{ whileHover: { scale: 1.1 } }"
-            :href="'/Meas.pdf'"
+            :href="'/meas.pdf'"
             download 
             class="py-4 px-6 text-lg font-semibold rounded-lg text-white bg-blue-800 hover:bg-blue-600 transition duration-300 ">
             Download CV
