@@ -3,16 +3,16 @@ export default (await import('vue')).defineComponent({
     data() {
         return {
             skills: [
-                { name: "HTML", icon: "html5.svg" },
-                { name: "CSS", icon: "css3.svg" },
-                { name: "JavaScript", icon: "javascript.svg" },
-                { name: "Vue.js", icon: "vue.svg" },
-                { name: "Tailwind CSS", icon: "tailwind.svg" },
-                { name: "Java", icon: "java.svg" },
-                { name: "Node.js", icon: "node.svg" },
-                { name: "MySQL", icon: "mysql.svg" },
-                { name: "PostgreSQL", icon: "postgresql.svg" },
-                { name: "GitHub", icon: "github.svg" },
+                { name: "HTML", icon: "/html5.svg" },
+                { name: "CSS", icon: "/css3.svg" },
+                { name: "JavaScript", icon: "/javascript.svg" },
+                { name: "Vue.js", icon: "/vue.svg" },
+                { name: "Tailwind CSS", icon: "/tailwind.svg" },
+                { name: "Java", icon: "/java.svg" },
+                { name: "Node.js", icon: "/node.svg" },
+                { name: "MySQL", icon: "/mysql.svg" },
+                { name: "PostgreSQL", icon: "/postgresql.svg" },
+                { name: "GitHub", icon: "/github.svg" },
             ],
         };
     },
@@ -47,7 +47,7 @@ function __VLS_template() {
             ...{ class: ("skill-box p-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-125") },
         });
         __VLS_elementAsFunction(__VLS_intrinsicElements.img)({
-            src: ((`/assets/${skill.icon}`)),
+            src: ((`/assets${skill.icon}`)),
             alt: ((skill.name)),
             ...{ class: ("w-16 h-16 mb-4") },
         });
