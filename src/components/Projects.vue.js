@@ -47,7 +47,7 @@ function __VLS_template() {
             ...{ class: ("bg-slate-800 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700") },
         });
         __VLS_elementAsFunction(__VLS_intrinsicElements.img)({
-            src: ((`src/assets/${project.image}`)),
+            src: ((`/${project.image}`)),
             alt: ((project.name)),
             ...{ class: ("w-full h-56 object-cover rounded-t-lg") },
         });

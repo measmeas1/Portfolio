@@ -6,7 +6,7 @@
     <!-- Project Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
       <div v-for="project in projects" :key="project.name" class="bg-slate-800 border-2 border-green-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-green-700">
-        <img :src="`src/assets/${project.image}`" :alt="project.name" class="w-full h-56 object-cover rounded-t-lg" />
+        <img :src="`/${project.image}`" :alt="project.name" class="w-full h-56 object-cover rounded-t-lg" />
         <div class="p-6">
           <h3 class="text-2xl font-semibold text-gray mb-2">{{ project.name }}</h3>
           <p class="text-sm text-gray-300 mb-4">{{ project.description }}</p>
