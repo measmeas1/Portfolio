@@ -42,11 +42,9 @@
 
 
 <script>
-import Motion from "@motionone/vue/dist/index.mjs";
 
 export default {
   name: "Home",
-  components: { Motion },
   methods: {
     scrollToContact() {
       document.getElementById("contact").scrollIntoView({ behavior: "smooth" });

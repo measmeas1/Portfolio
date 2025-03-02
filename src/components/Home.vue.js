@@ -1,7 +1,5 @@
-import Motion from "@motionone/vue/dist/index.mjs";
 export default (await import('vue')).defineComponent({
     name: "Home",
-    components: { Motion },
     methods: {
         scrollToContact() {
             document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
@@ -23,7 +21,6 @@ export default (await import('vue')).defineComponent({
 ; /* PartiallyEnd: #3632/script.vue */
 function __VLS_template() {
     const __VLS_ctx = {};
-    const __VLS_componentsOption = { Motion };
     let __VLS_components;
     let __VLS_directives;
     __VLS_elementAsFunction(__VLS_intrinsicElements.section, __VLS_intrinsicElements.section)({
