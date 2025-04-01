@@ -33,7 +33,7 @@
       <!-- Image on the right with animation -->
       <Motion v-bind="fadeInRight">
         <img src="../assets/image2.png" alt="Meas" 
-          class="w-56 h-57 md:w-auto md:h-auto rounded-full border-4 border-green-400 shadow-[0px_5px_60px_rgba(0,255,0,0.4),inset_0px_4px_20px_rgba(255,255,255,0.7)]">
+          class="w-56 h-57 md:w-auto mt-20 md:mt-0 rounded-full border-4 border-green-400 shadow-[0px_5px_60px_rgba(0,255,0,0.4),inset_0px_4px_20px_rgba(255,255,255,0.7)]">
       </Motion>
     </div>
   </section>

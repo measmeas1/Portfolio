@@ -4,21 +4,21 @@ export default (await import('vue')).defineComponent({
         return {
             projects: [
                 {
-                    name: "Project 1",
-                    image: "logo_2.jpg",
-                    description: "An e-commerce platform for buying and selling products online.",
-                    technologies: "Vue.js | Tailwind CSS | Stripe API",
-                    github: "https://github.com/yourusername/project1",
-                    demo: "https://yourdemo.com/project1"
+                    name: "CMS Systems",
+                    image: "cms.png",
+                    description: "Is an CMS project that you can post and manage the blog post with CRUD and Manage with User and Admin accounts.",
+                    technologies: "PHP | MySQL | Bootstrap",
+                    github: "https://github.com/measmeas1/CMS_PHP",
+                    demo: "http://cmsm.ct.ws/index.php"
                 },
-                {
-                    name: "Project 2",
-                    image: "logo_2.jpg",
-                    description: "A modern blogging platform with rich text editing and media uploads.",
-                    technologies: "Vue.js | Firebase | Tailwind CSS",
-                    github: "https://github.com/yourusername/project2",
-                    demo: "https://yourdemo.com/project2"
-                }
+                // {
+                //   name: "Project 2",
+                //   image: "logo_2.jpg",
+                //   description: "A modern blogging platform with rich text editing and media uploads.",
+                //   technologies: "Vue.js | Firebase | Tailwind CSS",
+                //   github: "https://github.com/yourusername/project2",
+                //   demo: "https://yourdemo.com/project2"
+                // }
             ],
         };
     },
@@ -86,10 +86,10 @@ function __VLS_template() {
             ...{ class: ("fas fa-external-link-alt mr-2") },
         });
         __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({
-            ...{ class: ("absolute inset-0 bg-green-700 opacity-10 rounded-2xl blur-2xl") },
+            ...{ class: ("absolute inset-0 bg-green-700 opacity-10 rounded-2xl blur-2xl pointer-events-none") },
         });
     }
-    ['py-40', 'text-center', 'mb-16', 'text-5xl', 'md:text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'bg-gradient-to-b', 'from-white', 'to-green-400', 'text-transparent', 'bg-clip-text', 'font-bold', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3', 'gap-10', 'px-4', 'bg-slate-800', 'border-2', 'border-green-500', 'rounded-lg', 'shadow-lg', 'transition-all', 'duration-300', 'transform', 'hover:scale-105', 'hover:shadow-2xl', 'hover:border-green-700', 'w-full', 'h-56', 'object-cover', 'rounded-t-lg', 'p-6', 'text-2xl', 'font-semibold', 'text-gray', 'mb-2', 'text-sm', 'text-gray-300', 'mb-4', 'text-xs', 'text-green-400', 'font-medium', 'flex', 'justify-between', 'mt-6', 'bg-green-600', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-800', 'transition-colors', 'duration-300', 'fab', 'fa-github', 'mr-2', 'bg-green-600', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-800', 'transition-colors', 'duration-300', 'fas', 'fa-external-link-alt', 'mr-2', 'absolute', 'inset-0', 'bg-green-700', 'opacity-10', 'rounded-2xl', 'blur-2xl',];
+    ['py-40', 'text-center', 'mb-16', 'text-5xl', 'md:text-5xl', 'lg:text-6xl', 'xl:text-7xl', 'bg-gradient-to-b', 'from-white', 'to-green-400', 'text-transparent', 'bg-clip-text', 'font-bold', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3', 'gap-10', 'px-4', 'bg-slate-800', 'border-2', 'border-green-500', 'rounded-lg', 'shadow-lg', 'transition-all', 'duration-300', 'transform', 'hover:scale-105', 'hover:shadow-2xl', 'hover:border-green-700', 'w-full', 'h-56', 'object-cover', 'rounded-t-lg', 'p-6', 'text-2xl', 'font-semibold', 'text-gray', 'mb-2', 'text-sm', 'text-gray-300', 'mb-4', 'text-xs', 'text-green-400', 'font-medium', 'flex', 'justify-between', 'mt-6', 'bg-green-600', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-800', 'transition-colors', 'duration-300', 'fab', 'fa-github', 'mr-2', 'bg-green-600', 'text-white', 'py-2', 'px-4', 'rounded-md', 'shadow-md', 'hover:bg-green-800', 'transition-colors', 'duration-300', 'fas', 'fa-external-link-alt', 'mr-2', 'absolute', 'inset-0', 'bg-green-700', 'opacity-10', 'rounded-2xl', 'blur-2xl', 'pointer-events-none',];
     var __VLS_slots;
     var $slots;
     let __VLS_inheritedAttrs;

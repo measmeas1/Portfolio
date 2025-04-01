@@ -21,7 +21,7 @@
           </div>
         </div>
           <!-- Glow Effect -->
-          <div class="absolute inset-0 bg-green-700 opacity-10 rounded-2xl blur-2xl"></div>
+          <div class="absolute inset-0 bg-green-700 opacity-10 rounded-2xl blur-2xl pointer-events-none"></div>
       </div>
     </div>
   </section>
@@ -34,21 +34,21 @@ export default {
     return {
       projects: [
         {
-          name: "Project 1",
-          image: "logo_2.jpg",
-          description: "An e-commerce platform for buying and selling products online.",
-          technologies: "Vue.js | Tailwind CSS | Stripe API",
-          github: "https://github.com/yourusername/project1",
-          demo: "https://yourdemo.com/project1"
+          name: "CMS Systems",
+          image: "cms.png",
+          description: "Is an CMS project that you can post and manage the blog post with CRUD and Manage with User and Admin accounts.",
+          technologies: "PHP | MySQL | Bootstrap",
+          github: "https://github.com/measmeas1/CMS_PHP",
+          demo: "http://cmsm.ct.ws/index.php"
         },
-        {
-          name: "Project 2",
-          image: "logo_2.jpg",
-          description: "A modern blogging platform with rich text editing and media uploads.",
-          technologies: "Vue.js | Firebase | Tailwind CSS",
-          github: "https://github.com/yourusername/project2",
-          demo: "https://yourdemo.com/project2"
-        }
+        // {
+        //   name: "Project 2",
+        //   image: "logo_2.jpg",
+        //   description: "A modern blogging platform with rich text editing and media uploads.",
+        //   technologies: "Vue.js | Firebase | Tailwind CSS",
+        //   github: "https://github.com/yourusername/project2",
+        //   demo: "https://yourdemo.com/project2"
+        // }
       ],
     };
   },

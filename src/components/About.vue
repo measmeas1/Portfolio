@@ -20,7 +20,7 @@
         <div class="max-w-3xl text-center lg:text-left bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
             <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed">
               I’m <span class="text-green-400 font-semibold">Mab Meas</span>, a dedicated software development student at Norton University.
-              I have a solid grasp of core programming languages like <span class="font-semibold text-green-300">Java, JavaScript, Node.js,</span> and <span class="font-semibold text-green-300">Python</span>, along with experience in web development using <span class="font-semibold text-green-300">HTML, CSS,</span> and frameworks such as <span class="font-semibold text-green-300">Vue</span> and <span class="font-semibold text-green-300">Tailwind</span>.
+              I have a solid grasp of core programming languages like <span class="font-semibold text-green-300">Java, JavaScript, Node.js,</span> and <span class="font-semibold text-green-300">PHP</span>, along with experience in web development using <span class="font-semibold text-green-300">HTML, CSS,</span> and frameworks such as <span class="font-semibold text-green-300">Vue, Laravel</span> and <span class="font-semibold text-green-300">Tailwind</span>.
               I’m also gaining experience with mobile development in <span class="font-semibold text-green-300">Flutter</span> and working with databases using <span class="font-semibold text-green-300">MySQL</span>.
             </p>
             

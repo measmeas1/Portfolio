@@ -30,11 +30,11 @@ export default {
         { name: "JavaScript", icon: "javascript.svg" },
         { name: "Vue.js", icon: "vue.svg" },
         { name: "Tailwind CSS", icon: "tailwind.svg" },
-        { name: "Java", icon: "java.svg" },
         { name: "Node.js", icon: "node.svg" },
         { name: "MySQL", icon: "mysql.svg" },
         { name: "PostgreSQL", icon: "postgresql.svg" },
         { name: "GitHub", icon: "github.svg" },
+        { name: "PHP", icon: "php-svgrepo-com.svg"}
       ],
     };
   },
